@@ -1,4 +1,4 @@
-# **Project Title**
+# **Foodstagram 🐯**
 
 ## Project Planning
 
@@ -46,7 +46,7 @@ _**Project Title**  Food Instagram
 
 <br>
 
-***
+---
 
 <br>
 
@@ -129,7 +129,7 @@ _Component Estimates_
 
 <br>
 
-***
+---
 
 <br>
 
@@ -147,7 +147,7 @@ _Component Estimates_
 
 <br>
 
-***
+---
 
 <br>
 
@@ -163,10 +163,9 @@ _Component Estimates_
 | :--------: | :----------------------------------------- |
 | Capitalize | _Lorem ipsum dolor sit amet, consectetur._ |
 
-
 ### Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+> Use this section to include a brief code snippet of functionality that you are proud of an a brief description
 
 ```
 function reverse(string) {
