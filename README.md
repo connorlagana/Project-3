@@ -8,7 +8,8 @@
 
 ### Overview
 
-_**Project Title**  Food Instagram
+_**Project Title**  Foodstagram
+
 
 <br>
 
@@ -57,7 +58,7 @@ _**Project Title**  Food Instagram
 _The Food Instagram
 be able to sign in/ sign out
 create user
-see all post 
+see all post
 see all post 1 user
 change post
 delete post
@@ -69,21 +70,6 @@ make a simple rendition of instagram
 
 #### Libraries
 
-> Use this section to list all supporting libraries and their role in the project.
-
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Spring   | _Lorem ipsum dolor sit amet, consectetur._ |
-
-#### API Data
-
-> Use the Data Section to define the API(s) you will be consuming for your project, inluding sample URL queries.
-
-|    API     | Quality Docs? | Website       | Sample Query                            |
-| :--------: | :-----------: | :------------ | :-------------------------------------- |
-| na          |              |       |  |
 
 #### React Components
 
@@ -109,11 +95,12 @@ _Component Breakdown_
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | class     |   y   |   n   | _The header will contain the navigation login/ logout functions._               |
-|  login/logout| functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    Header    | class      |   y   |   y   | _The header will contain the navigation login/ logout functions._               |
+|  login/logout| class      |   y   |   y   | _be able to login and out_       |
+|  Create Posts|   class    |   y   |   y   | _create a post._      |
+| create user  |   class    |   y   |   y   | _create a user._          |
+|   Update post|   class    |   y   |   y   | _update the post_ |
+|   Update User|   class    |   y   |   y   | _update the user info |
 
 _Component Estimates_
 
@@ -121,9 +108,12 @@ _Component Estimates_
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Header              |    h     |     3 hrs      |     0     |    tbd    |
+| Create post and user|    H     |     3 hrs      |     0     |     TBD    
+| Update post and user|    H     |     3 hrs      |     0     |     TBD     
+| login/logout        |    H     |     3 hrs      |     0     |     TBD    |
+| css/design          |    H     |     10 hrs     |     0     |     TBD    |
+| TOTAL               |          |     22 hrs     |     0     |     TBD   
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evalute possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
@@ -135,15 +125,15 @@ _Component Estimates_
 
 ### Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+> we might want to add a like function connected to each user
 
 #### Post-MVP Goals
 
-- _Add user account and auth capabilities._
+- _we might want to add a like function connected to each user._
 
 #### Post-MVP Data
 
-- _Utilize the Giphy API to welcome new users with funny gifs._
+- _learn more about auth and linking users to likes and other things._
 
 <br>
 
@@ -161,7 +151,7 @@ _Component Estimates_
 
 |  Function  | Description                                |
 | :--------: | :----------------------------------------- |
-| Capitalize | _Lorem ipsum dolor sit amet, consectetur._ |
+| delete     | _be able to delete if u are user_ |
 
 ### Code Showcase
 
@@ -177,6 +167,3 @@ function reverse(string) {
 
 > Use this section to list of all major issues encountered and their resolution.
 
-| Error                                                   | Resolution                                             |
-| :------------------------------------------------------ | :----------------------------------------------------- |
-| `app.js:34 Uncaught SyntaxError: Unexpected identifier` | Missing comma after first object in sources {} object. |
