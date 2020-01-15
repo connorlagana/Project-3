@@ -8,7 +8,8 @@
 
 ### Overview
 
-_**Project Title**  Foodstaram
+_**Project Title**  Foodstagram
+
 
 <br>
 
