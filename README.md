@@ -8,7 +8,7 @@
 
 ### Overview
 
-_**Project Title**  Food Instagram hello
+_**Project Title**  Food Instagram
 
 <br>
 
