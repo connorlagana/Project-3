@@ -10,7 +10,7 @@ commentRouter
       const comment = await Comment.findAll();
       res.json(comment);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   })
   .post(restrict, async (req, res, next) => {
@@ -21,7 +21,7 @@ commentRouter
       });
       res.json(comment);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   });
 
@@ -32,7 +32,7 @@ commentRouter
       const comment = await Comment.findByPk(req.params.id);
       res.json(comment);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   })
 
@@ -42,7 +42,7 @@ commentRouter
       await post.update(req.body);
       res.json(comment);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   })
 
@@ -51,7 +51,7 @@ commentRouter
       const comment = await Comment.destroy({ where: { id: req.params.id } });
       res.json(comment);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   });
 

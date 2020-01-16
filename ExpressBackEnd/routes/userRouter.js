@@ -47,7 +47,7 @@ userRouter.post("/register", async (req, res, next) => {
 
     res.json(respData);
   } catch (e) {
-    next(e);
+    res.json({ error: e.message });
   }
 });
 
