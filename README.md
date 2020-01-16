@@ -2,9 +2,9 @@
 
 _Teamname_
 
-![Logo](https://imgur.com/a/2NqfNLP.jpg)
+![Logo](./srcreadme/cheetahsarse.png)
 
-**ᄃΉΣΣƬΉΛ'Ƨ ΛЯƧΣ**
+# **ᄃΉΣΣƬΉΛ'Ƨ ΛЯƧΣ**
 
 ## Project Planning
 
