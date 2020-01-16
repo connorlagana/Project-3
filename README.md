@@ -2,7 +2,9 @@
 
 _Teamname_
 
-ƎꙄЯA
+![Logo](https://imgur.com/a/2NqfNLP.jpg)
+
+**ᄃΉΣΣƬΉΛ'Ƨ ΛЯƧΣ**
 
 ## Project Planning
 
