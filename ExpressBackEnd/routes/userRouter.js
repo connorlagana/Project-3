@@ -24,7 +24,13 @@ const buildAuthResponse = user => {
 };
 
 userRouter.get("/", async (req, res) => {
-  res.json("We're up and running");
+  // res.json("We're up and running");
+  try {
+    const user = await User.findAll();
+    res.json(user);
+  } catch (e) {
+    res.json({ error: e.message });
+  }
 });
 
 userRouter.post("/register", async (req, res, next) => {
@@ -57,6 +63,7 @@ userRouter.post("/login", async (req, res) => {
       const respData = buildAuthResponse(user);
 
       res.json(respData);
+      // res.json("Succesfull logged in")
     } else {
       res.status(401).send("Invalid Credentials");
     }

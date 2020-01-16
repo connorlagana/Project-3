@@ -51,8 +51,10 @@ Comment.init(
 
 User.hasMany(Post, { onDelete: "cascade" });
 Post.belongsTo(User);
+User.hasMany(Comment, { onDelete: "cascade" });
 Post.hasMany(Comment, { onDelete: "cascade" });
 Comment.belongsTo(Post);
+Comment.belongsTo(User);
 
 module.exports = {
   Post,
