@@ -2,7 +2,7 @@
 
 _Teamname_
 
-![Logo](https://imgur.com/a/2NqfNLP.jpg)
+![Logo](https://i.imgur.com/a/2NqfNLP.jpg)
 
 **ᄃΉΣΣƬΉΛ'Ƨ ΛЯƧΣ**
 
