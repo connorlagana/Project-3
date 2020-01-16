@@ -1,3 +1,34 @@
-#login {
-  background-color: aqua;
+#loginBackground img {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#backframeLogin {
+  height: 500px;
+  width: 300px;
+  background-color: rgba(50, 50, 200, 0.7);
+  border-radius: 20px;
+  z-index: 1;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#backframeLogin input {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+#backframeLogin button {
+  
 }

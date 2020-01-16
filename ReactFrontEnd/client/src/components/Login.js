@@ -1,10 +1,20 @@
 import React from "react";
 import { Router, Link } from "react-router-dom";
+import foodBackground from "../images/loginBackground.jpg";
 
 function Login() {
   return (
     <div id="login">
-      <div id="backframeLogin">Hola</div>
+      <div id="loginBackground">
+        <img src={foodBackground} />
+      </div>
+      <div id="backframeLogin">
+        <form>
+          <input placeholder="Username" />
+          <input placeholder="Password" />
+          <button>Login</button>
+        </form>
+      </div>
     </div>
   );
 }
