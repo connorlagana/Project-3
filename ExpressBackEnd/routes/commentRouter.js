@@ -1,36 +1,36 @@
 const { Router } = require("express");
-const postRouter = Router();
-const { Post } = require("../models.js");
+const commentRouter = Router();
+const { Comment } = require("../models.js");
 const { restrict } = require("../services/auth");
 
-postRouter
+commentRouter
   .route("/")
   .get(async (req, res, next) => {
     try {
-      const posts = await Post.findAll();
-      res.json(posts);
+      const comment = await Comment.findAll();
+      res.json(comment);
     } catch (e) {
       next(e);
     }
   })
   .post(restrict, async (req, res, next) => {
     try {
-      const post = await Post.create({
+      const comment = await Comment.create({
         ...req.body,
         userId: res.locals.user.id
       });
-      res.json(post);
+      res.json(comment);
     } catch (e) {
       next(e);
     }
   });
 
-postRouter
+commentRouter
   .route("/:id")
   .get(async (req, res, next) => {
     try {
-      const post = await Post.findByPk(req.params.id);
-      res.json(post);
+      const comment = await Comment.findByPk(req.params.id);
+      res.json(comment);
     } catch (e) {
       next(e);
     }
@@ -38,9 +38,9 @@ postRouter
 
   .put(restrict, async (req, res, next) => {
     try {
-      const post = await Post.findByPk(req.params.id);
+      const comment = await Comment.findByPk(req.params.id);
       await post.update(req.body);
-      res.json(post);
+      res.json(comment);
     } catch (e) {
       next(e);
     }
@@ -48,11 +48,11 @@ postRouter
 
   .delete(restrict, async (req, res, next) => {
     try {
-      const post = await Post.destroy({ where: { id: req.params.id } });
-      res.json(post);
+      const comment = await Comment.destroy({ where: { id: req.params.id } });
+      res.json(comment);
     } catch (e) {
       next(e);
     }
   });
 
-module.exports = postRouter;
+module.exports = commentRouter;
