@@ -125,7 +125,7 @@ _Component Estimates_
 
 _ERD Overview_
 
-![ERD Overview](https://imgur.com/GyGRlHd.jpg)
+![ERD Overview](./srcreadme/GA-ERD-Project3.png)
 
 - ERD Overview
 
