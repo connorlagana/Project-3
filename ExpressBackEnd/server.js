@@ -14,7 +14,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 
 // routes
-app.use("/auth", userRouter);
+app.use("/users", userRouter);
 app.use("/posts", postRouter);
 app.use("/comments", commentRouter);
 

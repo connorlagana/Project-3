@@ -1,45 +1,57 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize({
-  database: 'foodstagram_db',
-  dialect: 'postgres',
+  database: "foodstagram_db",
+  dialect: "postgres",
   define: {
     underscored: true
   }
 });
 
-class Post extends Sequelize.Model { }
+class Post extends Sequelize.Model {}
 
-Post.init({
-  title: Sequelize.STRING,
-  image_url: Sequelize.TEXT,
-  description: Sequelize.TEXT,
-  location: Sequelize.TEXT
-}, {
-  sequelize,
-  modelName: 'post'
-});
+Post.init(
+  {
+    title: Sequelize.STRING,
+    image_url: Sequelize.TEXT,
+    description: Sequelize.TEXT,
+    location: Sequelize.TEXT
+  },
+  {
+    sequelize,
+    modelName: "post"
+  }
+);
 
-class User extends Sequelize.Model { }
+class User extends Sequelize.Model {}
 
-User.init({
-  username: Sequelize.STRING,
-  password_digest: Sequelize.STRING,
-  usertag: Sequelize.TEXT
-}, {
-  sequelize,
-  modelName: 'user'
-})
+User.init(
+  {
+    username: Sequelize.STRING,
+    password_digest: Sequelize.STRING,
+    usertag: Sequelize.TEXT
+  },
+  {
+    sequelize,
+    modelName: "user"
+  }
+);
 
-class Comment extends Sequelize.Model { }
+class Comment extends Sequelize.Model {}
 
-Comment.init({
-  comment: Sequelize.STRING
-})
+Comment.init(
+  {
+    comment: Sequelize.STRING
+  },
+  {
+    sequelize,
+    modelName: "comment"
+  }
+);
 
-User.hasMany(Post, { onDelete: 'cascade' });
+User.hasMany(Post, { onDelete: "cascade" });
 Post.belongsTo(User);
-Post.hasMany(Comment, { onDelete: 'cascade' });
+Post.hasMany(Comment, { onDelete: "cascade" });
 Comment.belongsTo(Post);
 
 module.exports = {
@@ -47,4 +59,4 @@ module.exports = {
   User,
   Comment,
   sequelize
-}
+};
