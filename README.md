@@ -17,25 +17,25 @@ _**Project Title**  Foodstagram
 
 > Use the Wireframes section to display desktop, tablet and mobile views.
 
-![Desktop Landing](url)
+![Desktop Landing](https://i.imgur.com/ZfpzJFw.jpg)
 
 - Desktop Landing
 
 <br>
 
-![Desktop Hero](url)
+![Desktop Hero](https://imgur.com/b0qfhe3.jpg)
 
 - Desktop Hero
 
 <br>
 
-![Desktop Data Index](url)
+![Desktop Data Index](https://imgur.com/NLbRbFi.jpg)
 
 - Desktop Data Index
 
 <br>
 
-![Tablet Data Index](url)
+![Tablet Data Index](https://imgur.com/0Jfho3P.jpg)
 
 - Tablet Data Index
 
