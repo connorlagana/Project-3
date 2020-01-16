@@ -10,7 +10,7 @@ postRouter
       const posts = await Post.findAll();
       res.json(posts);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   })
   .post(restrict, async (req, res, next) => {
@@ -21,7 +21,7 @@ postRouter
       });
       res.json(post);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   });
 
@@ -32,7 +32,7 @@ postRouter
       const post = await Post.findByPk(req.params.id);
       res.json(post);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   })
 
@@ -42,7 +42,7 @@ postRouter
       await post.update(req.body);
       res.json(post);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   })
 
@@ -51,7 +51,7 @@ postRouter
       const post = await Post.destroy({ where: { id: req.params.id } });
       res.json(post);
     } catch (e) {
-      next(e);
+      res.json({ error: e.message });
     }
   });
 
