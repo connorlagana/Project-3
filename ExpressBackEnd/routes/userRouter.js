@@ -23,6 +23,10 @@ const buildAuthResponse = user => {
   };
 };
 
+userRouter.get("/", async (req, res) => {
+  res.json("We're up and running");
+});
+
 userRouter.post("/register", async (req, res, next) => {
   try {
     const password_digest = await hashPassword(req.body.password);
