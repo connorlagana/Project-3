@@ -41,7 +41,7 @@ _**Project Title**_  Foodstagram
 
 <br>
 
-![Mobile Data Index](url)
+![Mobile Data Index](https://imgur.com/hSVQYP9.jpg)
 
 - Mobile Data Index
 
