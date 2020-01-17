@@ -39,7 +39,7 @@ export default class UpdatePost extends Component {
     return (
       <div>
 
-        <img src={this.state.image_url} alt="post" className="image"/>
+        <img src={this.state.image_url} alt="post" id="postImage"/>
         <form onSubmit={(e) => {
           e.preventDefault()
           updatePost(this.props.match.params.id, this.state)
