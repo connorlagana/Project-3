@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import { loginUser, registerUser, verifyUser } from "./services/api_helper";
-
 import { Route } from "react-router-dom";
 import Login from "./components/Login.js";
 import Header from "./components/Header.js";
@@ -11,7 +10,6 @@ import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
 import Register from "./components/Register"
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -67,7 +65,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header handleLogout={this.handleLogout} />
         <Route exact path="/" render={() => <Login handleLogin={this.handleLogin}/>} />
         <Route
           exact
