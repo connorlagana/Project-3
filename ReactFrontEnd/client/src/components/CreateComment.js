@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { newComment } from "../services/api_helper";
 
 class CreateComment extends Component {
   constructor(props) {
     super(props);
     this.state = {
       comment: {}
-    }
+    };
   }
 
   onChange = e => {
