@@ -3,7 +3,7 @@ import axios from "axios";
 // import { deletePost} from "../services/api_helper";
 import { Link } from "react-router-dom";
 import Comments from "./Comments";
-import CreateComment from "./CreateComment";
+// import CreateComment from "./CreateComment";
 
 class AllPosts extends Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class AllPosts extends Component {
   componentDidMount = async () => {
     try {
       const results = await axios.get("http://localhost:3001/posts");
+      console.log(results.data);
       this.setState({
         posts: results.data,
         apiDataLoaded: true,
@@ -62,6 +63,7 @@ class AllPosts extends Component {
                 </button>
               )}
               <Link to={`/singlepost/${post.id}`}>Open Post</Link>
+              <Comments postId={post.id}/>
             </div>
           ))}
       </div>
