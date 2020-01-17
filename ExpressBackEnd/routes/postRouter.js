@@ -25,11 +25,22 @@ postRouter
     }
   });
 
+postRouter.route("/:id").get(async (req, res) => {
+  try {
+    const post = await Post.findByPk(req.params.id);
+    res.json(post);
+  } catch (e) {
+    res.json({ error: e.message });
+  }
+});
+
 postRouter
-  .route("/:id")
+  .route("/user/:userid")
   .get(async (req, res) => {
     try {
-      const post = await Post.findByPk(req.params.id);
+      const post = await Post.findAll({
+        // where: userid: req.params.userid
+      });
       res.json(post);
     } catch (e) {
       res.json({ error: e.message });
