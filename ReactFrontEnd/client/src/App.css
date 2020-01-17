@@ -23,7 +23,7 @@
 
 #backframeLogin form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -35,17 +35,4 @@
   height: 30px;
   text-align: center;
   font-size: 20px;
-  background-color: purple;
 }
-
-/* #backframeLogin form button {
-  border-radius: 10px;
-  height: 30px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  border: none;
-  background-color: black;
-  text-align: center;
-  font-size: 20px;
-} */

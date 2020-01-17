@@ -47,7 +47,7 @@ class AllPosts extends Component {
           this.state.posts.map((post, key) => (
             <div className="posts" key={key}>
               <h3>{post.title}</h3>
-              <img src={post.image_url} alt="post" />
+              <img src={post.image_url} alt="post" className="image" />
               <p>{post.description}</p>
               <p>{post.fun_fact}</p>
               <h6>{new Date(post.createdAt).toString()}</h6>

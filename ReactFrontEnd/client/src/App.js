@@ -7,7 +7,7 @@ import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
 import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
-import SinglePost from "./components/singlePost";
+import SinglePost from "./components/SinglePost";
 
 class App extends Component {
   constructor(props) {
@@ -23,11 +23,13 @@ class App extends Component {
     });
     localStorage.removeItem("authToken");
   };
+
   render() {
     return (
       <div className="App">
         <Header handleLogout={this.handleLogout} />
         <Route exact path="/login" render={() => <Login />} />
+
         <Route
           exact
           path="/"
