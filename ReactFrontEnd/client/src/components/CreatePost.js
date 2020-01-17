@@ -39,13 +39,7 @@ class CreatePost extends Component {
   render() {
     return (
       <form className="createPost" onSubmit={e => this.handleSubmit(e)}>
-        <input
-          type="text"
-          name="title"
-          placeholder="title"
-          onChange={this.onChange}
-          required
-        />
+
         <input
           type="text"
           name="image_url"
@@ -57,13 +51,6 @@ class CreatePost extends Component {
           type="text"
           name="description"
           placeholder="description"
-          onChange={this.onChange}
-          required
-        />
-        <input
-          type="text"
-          name="fun_fact"
-          placeholder="fun fact"
           onChange={this.onChange}
           required
         />

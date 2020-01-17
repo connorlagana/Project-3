@@ -29,6 +29,7 @@ class App extends Component {
       <div className="App">
         <Header handleLogout={this.handleLogout} />
         <Route exact path="/login" render={() => <Login />} />
+
         <Route
           exact
           path="/"
