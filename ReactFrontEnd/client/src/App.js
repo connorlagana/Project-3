@@ -6,6 +6,9 @@ import Login from "./components/Login.js";
 import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
 import Profile from "./components/Profile/Profile.js";
+import AllPosts from "./components/AllPosts.js"
+import SinglePost from "./components/singlePost"
+
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +29,12 @@ class App extends Component {
       <div className="App">
         <Header handleLogout={this.handleLogout} />
         <Route exact path="/login" render={() => <Login />} />
-
+        <Route
+          exact
+          path="/"
+            render={() => <AllPosts currentUser={this.state.currentUser} />}
+            />
+        <Route exact path="/singlepost/:id" component={SinglePost} />
         <Route exact path="/createPost" render={() => <CreatePost />} />
         <Route exact path="/profile" render={() => <Profile />} />
       </div>
