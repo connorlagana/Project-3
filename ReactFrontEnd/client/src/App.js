@@ -10,6 +10,7 @@ import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
 import Register from "./components/Register"
+
 class App extends Component {
   constructor(props) {
     super(props);

@@ -21,7 +21,7 @@ class Login extends Component {
     return (
       <div id="login">
         <div id="loginBackground">
-          <img src={foodBackground} />
+          <img src={foodBackground} alt ="background"/>
         </div>
         <div id="backframeLogin">
           <form
@@ -52,7 +52,7 @@ class Login extends Component {
             </>
             <>
               <input type="submit" value="Login" />
-              <Link to="/register">Not a member? Click to sign up</Link>
+              <Link to="/register"><p className="signup">Not a member? Click to sign up</p></Link>
             </>
           </form>
         </div>

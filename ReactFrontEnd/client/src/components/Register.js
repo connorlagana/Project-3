@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import foodBackground from "../images/loginBackground.jpg";
 
 class Register extends Component {
   constructor(props) {
@@ -18,34 +19,42 @@ class Register extends Component {
 
   render() {
     return (
-      <form
-        className="register"
-        onSubmit={e =>
-          this.props.handleRegister(e, {
-            username: this.state.username,
-            password: this.state.password
-          })
-        }
-      >
-        <h2>Register</h2>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={this.state.username}
-          onChange={this.handleChange}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-          required
-        />
-        <input className="submit" type="submit" value="Create Account" />
-      </form>
+      <div id="login">
+        <div id="loginBackground">
+          <img src={foodBackground} alt ="background"/>
+        </div>
+        <div id="backframeLogin">
+          <form
+            className="register"
+            onSubmit={e =>
+              this.props.handleRegister(e, {
+                username: this.state.username,
+                password: this.state.password
+              })
+              
+            }
+          >
+            <h2>Register</h2>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+              required
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              required
+            />
+            <input className="submit" type="submit" value="Create Account" />
+          </form>
+        </div>
+      </div>
     );
   }
 }
