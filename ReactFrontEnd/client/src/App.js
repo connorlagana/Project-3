@@ -9,7 +9,8 @@ import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
-import Register from "./components/Register"
+import Register from "./components/Register";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -66,7 +67,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path="/" render={() => <Login handleLogin={this.handleLogin}/>} />
+        <Route
+          exact
+          path="/"
+          render={() => <Login handleLogin={this.handleLogin} />}
+        />
         <Route
           exact
           path="/home"
@@ -76,7 +81,7 @@ class App extends Component {
           exact
           path="/register"
           render={() => <Register handleRegister={this.handleRegister} />}
-        />        
+        />
         <Route exact path="/singlepost/:id" component={SinglePost} />
         <Route exact path="/createPost" render={() => <CreatePost />} />
         <Route exact path="/profile" render={() => <Profile />} />

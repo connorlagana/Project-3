@@ -39,7 +39,7 @@ postRouter
   .get(async (req, res) => {
     try {
       const post = await Post.findAll({
-        // where: userid: req.params.userid
+        where: { userId: req.params.userid }
       });
       res.json(post);
     } catch (e) {
