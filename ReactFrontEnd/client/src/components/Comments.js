@@ -10,7 +10,7 @@ class Comments extends Component {
   }
 
   componentDidMount = async () => {
-    const comments = await showComment(props.id);
+    const comments = await showComment();
     this.state({
       comments
     })
@@ -18,11 +18,11 @@ class Comments extends Component {
 
   render() {
     return (
-      this.state.comments.map((post, id) => {
+      this.state.comments.map((post, id) => 
         <div key={id}>
           <p>{post}</p>
         </div>
-      })
+      )
     )
   }
 }

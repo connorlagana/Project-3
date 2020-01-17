@@ -42,6 +42,10 @@
   width: 200px;
 }
 
+#postImage{
+  width: 30vw
+}
+
 #profile {
   background-color: rgb(151, 151, 151);
 }
@@ -96,3 +100,7 @@
   flex-direction: column;
 }
 
+.headerRay{
+  display: flex;
+  justify-content:space-between;
+}
