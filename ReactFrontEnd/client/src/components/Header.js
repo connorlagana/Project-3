@@ -7,7 +7,7 @@ const Header = (props) => {
       <img src="www.google.com" alt="logo"/>
       <h1>FOODSTAGRAM</h1>
       <nav>
-        <Link to="/"> Home </Link>
+        <Link to="/home"> Home </Link>
         <Link to="/createPost"> Create Post</Link>
         <Link to="/profile"> Profile</Link>
         <button onClick={props.handleLogout}>Logout</button>
