@@ -3,10 +3,12 @@ import "./App.css";
 import { Route } from "react-router-dom";
 
 import Login from "./components/Login.js";
-import Header from "./components/Header.js"
-import CreatePost from "./components/CreatePost.js"
+import Header from "./components/Header.js";
+import CreatePost from "./components/CreatePost";
+import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js"
 import SinglePost from "./components/singlePost"
+
 
 class App extends Component {
   constructor(props) {
@@ -14,33 +16,30 @@ class App extends Component {
     this.state = {
       currentUser: null,
       errorText: ""
-     }
-    }
-    handleLogout = () => {
-      this.setState({
-        currentUser: null
-      });
-      localStorage.removeItem("authToken");
     };
-    render() {
-      return (
-        <div className="App">
-          <Header handleLogout={this.handleLogout} />
-          <Login />
-          <Route
+  }
+  handleLogout = () => {
+    this.setState({
+      currentUser: null
+    });
+    localStorage.removeItem("authToken");
+  };
+  render() {
+    return (
+      <div className="App">
+        <Header handleLogout={this.handleLogout} />
+        <Route exact path="/login" render={() => <Login />} />
+        <Route
           exact
           path="/"
             render={() => <AllPosts currentUser={this.state.currentUser} />}
             />
-
-
-
-          <Route exact path="/singlepost/:id" component={SinglePost} />
-          <Route exact path="/createPost" render={()=><CreatePost />}/>
-        </div>
-      );
-    }
+        <Route exact path="/singlepost/:id" component={SinglePost} />
+        <Route exact path="/createPost" render={() => <CreatePost />} />
+        <Route exact path="/profile" render={() => <Profile />} />
+      </div>
+    );
   }
-
+}
 
 export default App;

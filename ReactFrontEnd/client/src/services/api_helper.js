@@ -60,8 +60,8 @@ export const newComment = async newPost => {
   const resp = await api.post("/comments", newPost);
   return resp.data;
 };
+export const deletComment = async id => {
 
-export const deleteComment = async id => {
   const resp = await api.delete(`/comments/${id}`);
   return resp.data;
 };
