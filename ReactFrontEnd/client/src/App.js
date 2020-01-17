@@ -8,6 +8,7 @@ import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
+import { loginUser } from "./services/api_helper";
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +18,9 @@ class App extends Component {
       errorText: ""
     };
   }
+
+  
+
   handleLogout = () => {
     this.setState({
       currentUser: null
@@ -28,16 +32,17 @@ class App extends Component {
     return (
       <div className="App">
         <Header handleLogout={this.handleLogout} />
-        <Route exact path="/login" render={() => <Login />} />
-        <Route
-          exact
-          path="/"
-          render={() => <AllPosts currentUser={this.state.currentUser} />}
-        />
-        <Route exact path="/singlepost/:id" component={SinglePost} />
-        <Route exact path="/createPost" render={() => <CreatePost />} />
-        <Route exact path="/profile" render={() => <Profile />} />
-        <Route exact path="/updatePost/:id" component={UpdatePost} />
+        {!this.state.currentUser ? <Login handleLogin={loginUser}/> : <>
+        
+          <Route
+            exact
+            path="/"
+            render={() => <AllPosts currentUser={this.state.currentUser} />}
+          />
+          <Route exact path="/singlepost/:id" component={SinglePost} />
+          <Route exact path="/createPost" render={() => <CreatePost />} />
+          <Route exact path="/profile" render={() => <Profile />} />
+          <Route exact path="/updatePost/:id" component={UpdatePost} /></>}
       </div>
     );
   }

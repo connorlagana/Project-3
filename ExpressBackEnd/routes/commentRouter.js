@@ -16,8 +16,9 @@ commentRouter
   .post(async (req, res) => {
     try {
       const comment = await Comment.create({
-              comment: req.body.comment,
-              postId: req.body.postId
+        //       comment: req.body.comment,
+        // postId: req.body.postId,
+        ...req.body
             });
       res.json(comment);
     } catch (e) {

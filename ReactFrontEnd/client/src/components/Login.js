@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import foodBackground from "../images/loginBackground.jpg";
 
-function Login() {
+function Login(props) {
   return (
     <div id="login">
       <div id="loginBackground">
@@ -10,9 +10,9 @@ function Login() {
       </div>
       <div id="backframeLogin">
         <form
-          onSubmit={e => {
-            alert("FUCK YOU");
-          }}
+          onSubmit={e => 
+            props.handleLogin(e)
+          }
         >
           <>
             <input placeholder="Username" />
