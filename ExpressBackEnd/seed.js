@@ -43,7 +43,7 @@ const seed = async () => {
       "im a braam burg",
     image_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjPop_xxIvnAhV0Ap0JHTrpCTAQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.apple.com%2F&psig=AOvVaw07Pj4KA8yt01L5chTe1mwa&ust=1579381543381185"
   });
-  const connor = await User.create({
+  const ray = await User.create({
     username: "ray",
     password_digest:
       "$2b$11$XMmtqpO0QIrgOdGcIwr0UOVPueNHUbPAhVRwSNdx0FTao6L4pI15.",
