@@ -24,7 +24,6 @@ const buildAuthResponse = user => {
 };
 
 userRouter.get("/", async (req, res) => {
-  // res.json("We're up and running");
   try {
     const user = await User.findAll();
     res.json(user);
