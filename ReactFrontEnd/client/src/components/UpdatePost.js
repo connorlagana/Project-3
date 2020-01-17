@@ -17,7 +17,6 @@ export default class UpdatePost extends Component {
     const id = this.props.match.params.id;
     try {
       const resp = await showPost(id);
-      console.log(resp)
       this.setState({
         title: resp.title,
         image_url: resp.image_url,
@@ -39,6 +38,8 @@ export default class UpdatePost extends Component {
   render() {
     return (
       <div>
+
+        <img src={this.state.image_url} alt="post" id="postImage"/>
         <form onSubmit={(e) => {
           e.preventDefault()
           updatePost(this.props.match.params.id, this.state)

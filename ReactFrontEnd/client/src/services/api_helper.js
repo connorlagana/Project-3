@@ -13,12 +13,12 @@ const api_helper = resp => {
 };
 
 export const loginUser = async loginData => {
-  const resp = await api.post("/auth/login", loginData);
+  const resp = await api.post("/users/login", loginData);
   return api_helper(resp);
 };
 
 export const registerUser = async registerData => {
-  const resp = await api.post("/auth/register", registerData);
+  const resp = await api.post("/users/register", registerData);
   return api_helper(resp);
 };
 
@@ -26,7 +26,7 @@ export const verifyUser = async () => {
   const token = localStorage.getItem("authToken");
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
-    const resp = await api.get("/auth/verify");
+    const resp = await api.get("/users/verify");
     return resp.data;
   }
   return false;
@@ -60,14 +60,15 @@ export const newComment = async newPost => {
   const resp = await api.post("/comments", newPost);
   return resp.data;
 };
-export const deletComment = async id => {
 
+export const deletComment = async id => {
   const resp = await api.delete(`/comments/${id}`);
   return resp.data;
 };
 
-export const showComment = async id => {
-  const resp = await api.get(`/comments/${id}`);
+// NEED TO ADD ID AFTERWARDS TO FILTER COMMENTS === POST ID
+export const showComment = async () => {
+  const resp = await api.get(`/comments`);
   return resp.data;
 };
 
