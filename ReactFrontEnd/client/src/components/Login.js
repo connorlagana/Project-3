@@ -4,19 +4,19 @@ import foodBackground from "../images/loginBackground.jpg";
 
 class Login extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
       password: ""
-    }
+    };
   }
 
   onChange = async e => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     this.setState({
-      [name]:value
-    })
-  }
+      [name]: value
+    });
+  };
   render() {
     return (
       <div id="login">
@@ -54,6 +54,7 @@ class Login extends Component {
               <input type="submit" value="Login" />
               <Link to="/register"><p className="signup">Not a member? Click to sign up</p></Link>
             </>
+
           </form>
         </div>
       </div>

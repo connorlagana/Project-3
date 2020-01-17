@@ -67,7 +67,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path="/" render={() => <Login handleLogin={this.handleLogin}/>} />
+        <Route
+          exact
+          path="/"
+          render={() => <Login handleLogin={this.handleLogin} />}
+        />
         <Route
           exact
           path="/home"
@@ -77,7 +81,7 @@ class App extends Component {
           exact
           path="/register"
           render={() => <Register handleRegister={this.handleRegister} />}
-        />        
+        />
         <Route exact path="/singlepost/:id" component={SinglePost} />
         <Route exact path="/createPost" render={() => <CreatePost />} />
         <Route exact path="/profile" render={() => <Profile />} />
