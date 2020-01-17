@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { deletePost, showPost } from "../services/api_helper";
+import { deletePost, showPost } from "../services/api_helper";
 import { Link } from "react-router-dom";
 
 class SinglePost extends Component {
