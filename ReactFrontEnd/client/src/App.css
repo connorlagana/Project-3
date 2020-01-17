@@ -42,8 +42,8 @@
   width: 200px;
 }
 
-#postImage{
-  width: 30vw
+#postImage {
+  width: 30vw;
 }
 
 #profile {
@@ -54,6 +54,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
+  color: white;
 }
 
 #leftAbout {
@@ -110,8 +111,17 @@
   flex-direction: column;
 }
 
-.headerRay{
-  display: flex;
-  justify-content:space-between;
+#rightAbout h3 {
+  font-size: 20px;
+  font-weight: 300;
 }
 
+.headerRay {
+  display: flex;
+  justify-content: space-between;
+}
+
+#profPosts {
+  display: flex;
+  justify-content: center;
+}
