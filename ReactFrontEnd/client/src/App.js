@@ -9,15 +9,7 @@ import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Register from "./components/Register"
-=======
-import Register from "./components/Register";
->>>>>>> b7e203de3155181a69f5ba914a8ad62af17ac6a8
-=======
-import Register from "./components/Register"
->>>>>>> 38a56f2c03331e177420d9d7e7c83a4fe2ebd144
 
 class App extends Component {
   constructor(props) {

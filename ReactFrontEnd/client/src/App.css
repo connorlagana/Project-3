@@ -121,16 +121,11 @@
   justify-content: space-between;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.signup{
+.signup {
   color: black
 }
-=======
->>>>>>> b7e203de3155181a69f5ba914a8ad62af17ac6a8
-=======
+
 #profPosts {
   display: flex;
   justify-content: center;
 }
->>>>>>> 38a56f2c03331e177420d9d7e7c83a4fe2ebd144
