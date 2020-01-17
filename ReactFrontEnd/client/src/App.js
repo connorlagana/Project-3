@@ -7,8 +7,8 @@ import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
 import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js"
-import SinglePost from "./components/singlePost"
-
+import SinglePost from "./components/singlePost.js"
+import UpdatePost from "./components/UpdatePost.js"
 
 class App extends Component {
   constructor(props) {
@@ -38,6 +38,8 @@ class App extends Component {
         <Route exact path="/singlepost/:id" component={SinglePost} />
         <Route exact path="/createPost" render={() => <CreatePost />} />
         <Route exact path="/profile" render={() => <Profile />} />
+
+        <Route exact path="/updatePost/:id" component={UpdatePost} /> 
       </div>
     );
   }
