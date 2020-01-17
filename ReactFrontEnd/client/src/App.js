@@ -4,7 +4,9 @@ import { Route } from "react-router-dom";
 
 import Login from "./components/Login.js";
 import Header from "./components/Header.js"
-import CreatePost from "./components/CreatePost"
+import CreatePost from "./components/CreatePost.js"
+import AllPosts from "./components/AllPosts.js"
+// import Home from "./components/Home.js"
 
 class App extends Component {
   constructor(props) {
@@ -25,8 +27,11 @@ class App extends Component {
         <div className="App">
           <Header handleLogout={this.handleLogout} />
           <Login />
-
-
+        <Route
+          exact
+          path="/"
+            render={() => <AllPosts currentUser={this.state.currentUser} />}
+            />
 
 
 

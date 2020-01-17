@@ -56,22 +56,22 @@ export const updatePost = async (id, updateData) => {
 
 // NEW COMMENT API_HELPER API CALLS
 
-export const newPost = async newPost => {
+export const newComment = async newPost => {
   const resp = await api.post("/comments", newPost);
   return resp.data;
 };
 
-export const deletePost = async id => {
+export const deleteComment = async id => {
   const resp = await api.delete(`/comments/${id}`);
   return resp.data;
 };
 
-export const showPost = async id => {
+export const showComment = async id => {
   const resp = await api.get(`/comments/${id}`);
   return resp.data;
 };
 
-export const updatePost = async (id, updateData) => {
+export const updateComment = async (id, updateData) => {
   const resp = await api.put(`/comments/${id}`, updateData);
   return resp.data;
 };
