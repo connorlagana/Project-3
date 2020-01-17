@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import ProfileHeader from "./ProfileHeader.js";
+import ProfPost from "./ProfPost.js";
 import axios from "axios";
 
 class Profile extends Component {
@@ -9,20 +10,24 @@ class Profile extends Component {
     this.state = {
       name: "",
       image_url: "",
-      description: "ff",
-      res: ""
+      description: "",
+      posts: []
     };
   }
 
   async componentDidMount() {
-    const res = await axios.get("http://localhost:3001/users/3");
-    console.log(res);
+    const userRes = await axios.get("http://localhost:3001/users/2");
+
+    const postRes = await axios.get("http://localhost:3001/posts/user/2");
+    console.log(postRes);
 
     this.setState({
-      name: res.data.username,
-      image_url: res.data.image_url,
-      description: res.data.description
+      name: userRes.data.username,
+      image_url: userRes.data.image_url,
+      description: userRes.data.description,
+      posts: postRes.data
     });
+    console.log(this.state.posts[0].description);
   }
 
   render() {
@@ -33,6 +38,7 @@ class Profile extends Component {
           image_url={this.state.image_url}
           description={this.state.description}
         />
+        <ProfPost posts={this.state.posts} />
       </div>
     );
   }
