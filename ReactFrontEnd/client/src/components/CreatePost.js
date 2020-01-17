@@ -60,13 +60,6 @@ class CreatePost extends Component {
           onChange={this.onChange}
           required
         />
-        <input
-          type="text"
-          name="fun_fact"
-          placeholder="fun fact"
-          onChange={this.onChange}
-          required
-        />
         <input type="submit" value="Submit" />
       </form>
     );
