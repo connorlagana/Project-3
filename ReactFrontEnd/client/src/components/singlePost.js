@@ -48,7 +48,7 @@ class SinglePost extends Component {
 
             <Link to={`/updatePost/${this.state.post.id}`}
               id={this.state.id}
-            >Update</Link>
+              >Update</Link>
             {this.state.currentUser && (
               <button
                 onClick={e => {

@@ -9,7 +9,8 @@ class Profile extends Component {
     this.state = {
       name: "",
       image_url: "",
-      description: "ff"
+      description: "ff",
+      res: ""
     };
   }
 
