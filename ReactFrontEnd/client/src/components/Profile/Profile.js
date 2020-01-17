@@ -14,7 +14,7 @@ class Profile extends Component {
       <div>
         <h1>Welcome {this.state.name}</h1>
         <div>
-          <img id="profilePicture" src="" />
+          <img id="profilePicture" src={this.state.image_url} />
         </div>
       </div>
     );

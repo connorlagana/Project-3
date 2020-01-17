@@ -71,6 +71,15 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
+userRouter.route("/:id").get(async (req, res) => {
+  try {
+    const post = await User.findByPk(req.params.id);
+    res.json(post);
+  } catch (e) {
+    res.json({ error: e.message });
+  }
+});
+
 userRouter.get("/verify", restrict, (req, res) => {
   const user = res.locals.user;
   res.json(user);
