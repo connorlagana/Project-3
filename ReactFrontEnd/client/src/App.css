@@ -37,6 +37,8 @@
   font-size: 20px;
 }
 
-.image {
-  width: 30vh
+#profilePictureImage {
+  height: 200px;
+  width: 200px;
 }
+
