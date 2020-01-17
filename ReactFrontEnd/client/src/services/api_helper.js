@@ -13,12 +13,12 @@ const api_helper = resp => {
 };
 
 export const loginUser = async loginData => {
-  const resp = await api.post("/auth/login", loginData);
+  const resp = await api.post("/users/login", loginData);
   return api_helper(resp);
 };
 
 export const registerUser = async registerData => {
-  const resp = await api.post("/auth/register", registerData);
+  const resp = await api.post("/users/register", registerData);
   return api_helper(resp);
 };
 
@@ -26,7 +26,7 @@ export const verifyUser = async () => {
   const token = localStorage.getItem("authToken");
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
-    const resp = await api.get("/auth/verify");
+    const resp = await api.get("/users/verify");
     return resp.data;
   }
   return false;
