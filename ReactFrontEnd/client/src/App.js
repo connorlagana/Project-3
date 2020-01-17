@@ -9,6 +9,8 @@ import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/SinglePost";
 
+import UpdatePost from "./components/UpdatePost.js"
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +40,8 @@ class App extends Component {
         <Route exact path="/singlepost/:id" component={SinglePost} />
         <Route exact path="/createPost" render={() => <CreatePost />} />
         <Route exact path="/profile" render={() => <Profile />} />
+
+        <Route exact path="/updatePost/:id" component={UpdatePost} /> 
       </div>
     );
   }
