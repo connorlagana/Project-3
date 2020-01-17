@@ -72,6 +72,11 @@ export const showComment = async () => {
   return resp.data;
 };
 
+export const showCommentPost = async (postId) => {
+  const resp = await api.get(`/comments/allComments/${postId}`);
+  return resp.data;
+}
+
 export const updateComment = async (id, updateData) => {
   const resp = await api.put(`/comments/${id}`, updateData);
   return resp.data;

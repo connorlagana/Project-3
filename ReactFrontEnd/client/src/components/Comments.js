@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { showComment, newComment } from "../services/api_helper";
+import { showCommentPost, newComment } from "../services/api_helper";
 
 import CreateComment from "./CreateComment";
 
@@ -13,7 +13,7 @@ class Comments extends Component {
   }
 
   componentDidMount = async () => {
-    const comments = await showComment();
+    const comments = await showCommentPost(this.props.postId);
     console.log(comments);
     this.setState({
       comments,
