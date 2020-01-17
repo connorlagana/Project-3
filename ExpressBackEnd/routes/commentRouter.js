@@ -13,17 +13,28 @@ commentRouter
       res.json({ error: e.message });
     }
   })
-  .post(restrict, async (req, res, next) => {
+  .post(async (req, res) => {
     try {
       const comment = await Comment.create({
-        ...req.body,
-        userId: res.locals.user.id
-      });
+              comment: req.body.comment,
+              postId: req.body.postId
+            });
       res.json(comment);
     } catch (e) {
-      res.json({ error: e.message });
+      console.log(e);
     }
-  });
+  })
+  // .post(restrict, async (req, res, next) => {
+  //   try {
+  //     const comment = await Comment.create({
+  //       ...req.body,
+  //       userId: res.locals.user.id
+  //     });
+  //     res.json(comment);
+  //   } catch (e) {
+  //     res.json({ error: e.message });
+  //   }
+  // });
 
 commentRouter
   .route("/:id")

@@ -60,14 +60,15 @@ export const newComment = async newPost => {
   const resp = await api.post("/comments", newPost);
   return resp.data;
 };
-export const deletComment = async id => {
 
+export const deletComment = async id => {
   const resp = await api.delete(`/comments/${id}`);
   return resp.data;
 };
 
-export const showComment = async id => {
-  const resp = await api.get(`/comments/${id}`);
+// NEED TO ADD ID AFTERWARDS TO FILTER COMMENTS === POST ID
+export const showComment = async () => {
+  const resp = await api.get(`/comments`);
   return resp.data;
 };
 
