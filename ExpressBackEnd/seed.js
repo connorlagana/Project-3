@@ -34,6 +34,24 @@ const seed = async () => {
       "Whattup! I'm connor and I lay the pipe whilst also getting this bread",
     image_url: "https://imgur.com/SIpJ5PD.jpg"
   });
+  const Braam = await User.create({
+    username: "Braam",
+    password_digest:
+      "$2b$11$XMmtqpO0QIrgOdGcIwr0UOVPueNHUbPAhVRwSNdx0FTao6L4pI15.",
+    email: "braam.lagana@gmail.com",
+    description:
+      "im a braam burg",
+    image_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjPop_xxIvnAhV0Ap0JHTrpCTAQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.apple.com%2F&psig=AOvVaw07Pj4KA8yt01L5chTe1mwa&ust=1579381543381185"
+  });
+  const connor = await User.create({
+    username: "ray",
+    password_digest:
+      "$2b$11$XMmtqpO0QIrgOdGcIwr0UOVPueNHUbPAhVRwSNdx0FTao6L4pI15.",
+    email: "ray.lagana@gmail.com",
+    description:
+      "easy peasy",
+    image_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.facilityexecutive.com%2Fwp-content%2Fuploads%2F2019%2F10%2FThumbs.Up_-503x300.jpg&imgrefurl=https%3A%2F%2Ffacilityexecutive.com%2F2019%2F10%2Ffriday-funny-go-ahead-give-your-boss-a-thumbs-up%2F&docid=UKLkJjJdf-T4PM&tbnid=V5czkcw_vsIX-M%3A&vet=10ahUKEwi4xPWoxYvnAhXJqlkKHTgmDBwQMwiBASgEMAQ..i&w=503&h=300&bih=723&biw=619&q=thumbs%20up&ved=0ahUKEwi4xPWoxYvnAhXJqlkKHTgmDBwQMwiBASgEMAQ&iact=mrc&uact=8"
+  });
 
   const post1 = await Post.create({
     title: "I'm sexy and I know it",
