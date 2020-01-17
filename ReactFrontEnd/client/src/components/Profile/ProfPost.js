@@ -4,7 +4,6 @@ import { Route, Link } from "react-router-dom";
 function ProfPost(props) {
   return (
     <div id="profPost">
-      
       {props.apiDataLoaded &&
         props.posts.map((post, key) => (
           <div>
