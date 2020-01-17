@@ -26,7 +26,6 @@ class Login extends Component {
         <div id="backframeLogin">
           <form
             onSubmit={e => {
-              alert("FUCK YOU")
               this.props.handleLogin(e, {
                 username: this.state.username,
                 password: this.state.password
@@ -36,7 +35,7 @@ class Login extends Component {
             <>
               <input
                 type="text"
-                name="usename"
+                name="username"
                 value={this.state.username}
                 onChange={this.onChange}
                 placeholder="Username"
