@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import foodBackground from "../images/loginBackground.jpg";
 
 function Login() {
@@ -9,10 +9,18 @@ function Login() {
         <img src={foodBackground} />
       </div>
       <div id="backframeLogin">
-        <form>
-          <input placeholder="Username" />
-          <input placeholder="Password" />
-          <button>Login</button>
+        <form
+          onSubmit={e => {
+            alert("FUCK YOU");
+          }}
+        >
+          <>
+            <input placeholder="Username" />
+            <input placeholder="Password" />
+          </>
+          <>
+            <input type="submit" value="submit" />
+          </>
         </form>
       </div>
     </div>
