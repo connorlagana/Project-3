@@ -42,7 +42,8 @@ class SinglePost extends Component {
       <div className="allPosts">
         {this.state.apiDataLoaded && (
           <div className="posts">
-            <img src={this.state.post.image_url} alt="post" />
+            <h3>{this.state.post.title}</h3>
+            <img src={this.state.post.image_url} alt="post" className="image"/>
             <p>{this.state.post.description}</p>
 
             <Link to={`/updatePost/${this.state.post.id}`}

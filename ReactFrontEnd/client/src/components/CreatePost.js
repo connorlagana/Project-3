@@ -39,7 +39,13 @@ class CreatePost extends Component {
   render() {
     return (
       <form className="createPost" onSubmit={e => this.handleSubmit(e)}>
-
+        <input
+          type="text"
+          name="title"
+          placeholder="title"
+          onChange={this.onChange}
+          required
+        />
         <input
           type="text"
           name="image_url"
