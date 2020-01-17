@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
+import ProfileHeader from "./ProfileHeader.js";
 import axios from "axios";
 
 class Profile extends Component {
@@ -8,6 +9,7 @@ class Profile extends Component {
     this.state = {
       name: "",
       image_url: "",
+      description: "ff",
       res: ""
     };
   }
@@ -18,19 +20,19 @@ class Profile extends Component {
 
     this.setState({
       name: res.data.username,
-      image_url: res.data.image_url
+      image_url: res.data.image_url,
+      description: res.data.description
     });
   }
 
   render() {
     return (
-      <div>
-        <h1>{this.state.name}</h1>
-        <div id="profHeader">
-          <div id="profilePic">
-            <img id="profilePictureImage" src={this.state.image_url} />
-          </div>
-        </div>
+      <div id="profile">
+        <ProfileHeader
+          name={this.state.name}
+          image_url={this.state.image_url}
+          description={this.state.description}
+        />
       </div>
     );
   }
