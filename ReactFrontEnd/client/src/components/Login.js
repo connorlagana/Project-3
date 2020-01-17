@@ -9,10 +9,10 @@ function Login() {
         <img src={foodBackground} />
       </div>
       <div id="backframeLogin">
-        <form>
+        <form onSubmit={alert("FUCK YOU")}>
           <input placeholder="Username" />
           <input placeholder="Password" />
-          <button>Login</button>
+          <input type="submit">Login</input>
         </form>
       </div>
     </div>
