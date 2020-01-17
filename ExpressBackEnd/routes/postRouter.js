@@ -5,7 +5,7 @@ const { restrict } = require("../services/auth");
 
 postRouter
   .route("/")
-  .get(async (req, res, next) => {
+  .get(async (req, res) => {
     try {
       const posts = await Post.findAll();
       res.json(posts);
@@ -13,7 +13,7 @@ postRouter
       res.json({ error: e.message });
     }
   })
-  .post(restrict, async (req, res, next) => {
+  .post(restrict, async (req, res) => {
     try {
       const post = await Post.create({
         ...req.body,
@@ -27,7 +27,7 @@ postRouter
 
 postRouter
   .route("/:id")
-  .get(async (req, res, next) => {
+  .get(async (req, res) => {
     try {
       const post = await Post.findByPk(req.params.id);
       res.json(post);
@@ -36,7 +36,7 @@ postRouter
     }
   })
 
-  .put(restrict, async (req, res, next) => {
+  .put(restrict, async (req, res) => {
     try {
       const post = await Post.findByPk(req.params.id);
       await post.update(req.body);
@@ -46,7 +46,7 @@ postRouter
     }
   })
 
-  .delete(restrict, async (req, res, next) => {
+  .delete(restrict, async (req, res) => {
     try {
       const post = await Post.destroy({ where: { id: req.params.id } });
       res.json(post);
