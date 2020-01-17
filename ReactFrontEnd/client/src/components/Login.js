@@ -33,6 +33,9 @@ class Login extends Component {
             }}
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 38a56f2c03331e177420d9d7e7c83a4fe2ebd144
             <>
               <input
                 type="text"
@@ -55,6 +58,7 @@ class Login extends Component {
               <input type="submit" value="Login" />
               <Link to="/register"><p className="signup">Not a member? Click to sign up</p></Link>
             </>
+<<<<<<< HEAD
 =======
             <input
               type="text"
@@ -75,6 +79,9 @@ class Login extends Component {
             <input type="submit" value="Login" />
             <Link to="/register">Not a member? Click to sign up</Link>
 >>>>>>> b7e203de3155181a69f5ba914a8ad62af17ac6a8
+=======
+
+>>>>>>> 38a56f2c03331e177420d9d7e7c83a4fe2ebd144
           </form>
         </div>
       </div>

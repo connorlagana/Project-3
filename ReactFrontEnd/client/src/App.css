@@ -42,8 +42,8 @@
   width: 200px;
 }
 
-#postImage{
-  width: 30vw
+#postImage {
+  width: 30vw;
 }
 
 #profile {
@@ -54,6 +54,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
+  color: white;
 }
 
 #leftAbout {
@@ -110,14 +111,26 @@
   flex-direction: column;
 }
 
-.headerRay{
-  display: flex;
-  justify-content:space-between;
+#rightAbout h3 {
+  font-size: 20px;
+  font-weight: 300;
 }
 
+.headerRay {
+  display: flex;
+  justify-content: space-between;
+}
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 .signup{
   color: black
 }
 =======
 >>>>>>> b7e203de3155181a69f5ba914a8ad62af17ac6a8
+=======
+#profPosts {
+  display: flex;
+  justify-content: center;
+}
+>>>>>>> 38a56f2c03331e177420d9d7e7c83a4fe2ebd144

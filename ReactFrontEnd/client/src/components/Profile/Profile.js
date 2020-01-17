@@ -27,7 +27,7 @@ class Profile extends Component {
       description: userRes.data.description,
       posts: postRes.data
     });
-    console.log(this.state.posts[0].description);
+    console.log(this.state.posts);
   }
 
   render() {
@@ -38,7 +38,11 @@ class Profile extends Component {
           image_url={this.state.image_url}
           description={this.state.description}
         />
-        <ProfPost posts={this.state.posts} />
+        <ProfPost
+          posts={this.state.posts}
+          profImage={this.state.image_url}
+          name={this.state.name}
+        />
       </div>
     );
   }
