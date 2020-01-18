@@ -66,7 +66,6 @@ export const deletComment = async id => {
   return resp.data;
 };
 
-// NEED TO ADD ID AFTERWARDS TO FILTER COMMENTS === POST ID
 export const showComment = async () => {
   const resp = await api.get(`/comments`);
   return resp.data;

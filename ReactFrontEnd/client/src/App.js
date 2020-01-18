@@ -7,7 +7,7 @@ import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
 import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
-import SinglePost from "./components/singlePost";
+import SinglePost from "./components/SinglePost";
 import UpdatePost from "./components/UpdatePost.js";
 import Register from "./components/Register";
 
@@ -50,19 +50,23 @@ class App extends Component {
 
   handleVerify = async () => {
     const currentUser = await verifyUser();
+    console.log(currentUser);
     if (currentUser) {
       this.setState({
         currentUser
       });
     }
   };
-  handleLogout = e => {
-    e.preventDefault();
-    console.log("test");
+
+  handleLogout = () => {
     this.setState({
       currentUser: false
     });
     localStorage.removeItem("authToken");
+  };
+
+  componentDidMount = () => {
+    this.handleVerify();
   };
 
   render() {
@@ -76,6 +80,11 @@ class App extends Component {
               path="/"
               render={() => <Login handleLogin={this.handleLogin} />}
             />
+            <Route
+              exact
+              path="/register"
+              render={() => <Register handleRegister={this.handleRegister} />}
+            />
           </>
         ) : (
           <>
@@ -86,11 +95,6 @@ class App extends Component {
                 exact
                 path="/home"
                 render={() => <AllPosts currentUser={this.state.currentUser} />}
-              />
-              <Route
-                exact
-                path="/register"
-                render={() => <Register handleRegister={this.handleRegister} />}
               />
               <Route exact path="/singlepost/:id" component={SinglePost} />
               <Route exact path="/createPost" render={() => <CreatePost />} />

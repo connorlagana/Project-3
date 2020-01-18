@@ -21,7 +21,7 @@ class Register extends Component {
     return (
       <div id="login">
         <div id="loginBackground">
-          <img src={foodBackground} alt ="background"/>
+          <img src={foodBackground} alt="background" />
         </div>
         <div id="backframeLogin">
           <form
@@ -31,24 +31,22 @@ class Register extends Component {
                 username: this.state.username,
                 password: this.state.password
               })
-              
             }
           >
-            <h2>Register</h2>
-            <label htmlFor="username">Username</label>
             <input
               type="text"
               name="username"
               value={this.state.username}
               onChange={this.handleChange}
+              placeholder="Create a Username"
               required
             />
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               value={this.state.password}
               onChange={this.handleChange}
+              placeholder="Create a Password"
               required
             />
             <input className="submit" type="submit" value="Create Account" />

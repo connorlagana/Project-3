@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
 import ProfileHeader from "./ProfileHeader.js";
 import ProfPost from "./ProfPost.js";
 import axios from "axios";

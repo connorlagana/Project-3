@@ -1,5 +1,4 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
 
 function Profile(props) {
   return (
@@ -10,7 +9,7 @@ function Profile(props) {
           <button>Edit Profile</button>
         </div>
         <div id="centerAbout">
-          <img src={props.image_url} />
+          <img src={props.image_url} alt="profilepic" />
         </div>
         <div id="rightAbout">
           <h3>Posts: 69</h3>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
 
 function ProfPost(props) {
   return (
@@ -7,8 +6,8 @@ function ProfPost(props) {
       {props.posts.map((post, key) => (
           <div id="profPost">
             <p>@{props.name}</p>
-            <img src={props.profImage} id="profImageOnPost" />
-            <img src={post.image_url} id="postImageOnProf" />
+            <img src={props.profImage} id="profImageOnPost" alt="professional" />
+            <img src={post.image_url} id="postImageOnProf" alt="postimages"/>
             <p>{post.description}</p>
           </div>
         ))}

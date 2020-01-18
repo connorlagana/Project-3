@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { deletePost, showPost } from "../services/api_helper";
 import { Link } from "react-router-dom";
 
+//Custom Components
+import Comments from "./Comments";
+
 class SinglePost extends Component {
   constructor(props) {
     super(props);
@@ -43,12 +46,12 @@ class SinglePost extends Component {
         {this.state.apiDataLoaded && (
           <div className="posts">
             <h3>{this.state.post.title}</h3>
-            <img src={this.state.post.image_url} alt="post" id="postImage"/>
+            <img src={this.state.post.image_url} alt="post" id="postImage" />
             <p>{this.state.post.description}</p>
 
-            <Link to={`/updatePost/${this.state.post.id}`}
-              id={this.state.id}
-              >Update</Link>
+            <Link to={`/updatePost/${this.state.post.id}`} id={this.state.id}>
+              Update
+            </Link>
             {this.state.currentUser && (
               <button
                 onClick={e => {
@@ -57,10 +60,8 @@ class SinglePost extends Component {
               >
                 Delete
               </button>
-              
             )}
-
-
+            <Comments postId={this.state.post.id}/>
           </div>
         )}
       </div>
