@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./App.scss";
 import { loginUser, registerUser, verifyUser } from "./services/api_helper";
-import { Route } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Login from "./components/Login.js";
 import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
@@ -9,13 +9,13 @@ import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
-import Register from "./components/Register"
+import Register from "./components/Register";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: null,
+      currentUser: false,
       errorText: ""
     };
   }
@@ -56,9 +56,11 @@ class App extends Component {
       });
     }
   };
-  handleLogout = () => {
+  handleLogout = e => {
+    e.preventDefault();
+    console.log("test");
     this.setState({
-      currentUser: null
+      currentUser: false
     });
     localStorage.removeItem("authToken");
   };
@@ -66,26 +68,37 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Route
-          exact
-          path="/"
-          render={() => <Login handleLogin={this.handleLogin} />}
-        />
-        <Route
-          exact
-          path="/home"
-          render={() => <AllPosts currentUser={this.state.currentUser} />}
-        />
-        <Route
-          exact
-          path="/register"
-          render={() => <Register handleRegister={this.handleRegister} />}
-        />
-        <Route exact path="/singlepost/:id" component={SinglePost} />
-        <Route exact path="/createPost" render={() => <CreatePost />} />
-        <Route exact path="/profile" render={() => <Profile />} />
-        <Route exact path="/updatePost/:id" component={UpdatePost} />
+        {!this.state.currentUser ? (
+          <>
+            <Redirect to="/" />
+            <Route
+              exact
+              path="/"
+              render={() => <Login handleLogin={this.handleLogin} />}
+            />
+          </>
+        ) : (
+          <>
+            <Redirect to="/home" />
+            <Header handleLogout={this.handleLogout} />
+            <Switch>
+              <Route
+                exact
+                path="/home"
+                render={() => <AllPosts currentUser={this.state.currentUser} />}
+              />
+              <Route
+                exact
+                path="/register"
+                render={() => <Register handleRegister={this.handleRegister} />}
+              />
+              <Route exact path="/singlepost/:id" component={SinglePost} />
+              <Route exact path="/createPost" render={() => <CreatePost />} />
+              <Route exact path="/profile" render={() => <Profile />} />
+              <Route exact path="/updatePost/:id" component={UpdatePost} />
+            </Switch>
+          </>
+        )}
       </div>
     );
   }
