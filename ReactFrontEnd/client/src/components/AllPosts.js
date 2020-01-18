@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import { deletePost} from "../services/api_helper";
+import { deletePost } from "../services/api_helper";
 import { Link } from "react-router-dom";
 import Comments from "./Comments";
-// import CreateComment from "./CreateComment";
 
 class AllPosts extends Component {
   constructor(props) {
@@ -29,18 +28,19 @@ class AllPosts extends Component {
     }
   };
 
-  // delete = async (e, postId) => {
-  //   e.preventDefault();
-  //   try {
-  //     await deletePost(postId);
-  //     const posts = this.state.posts.filter(post => post.id !== postId);
-  //     this.setState({
-  //       posts
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  delete = async (e, postId) => {
+    e.preventDefault();
+    console.log(postId);
+    try {
+      await deletePost(postId);
+      const posts = this.state.posts.filter(post => post.id !== postId);
+      this.setState({
+        posts
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   render() {
     return (
@@ -63,7 +63,7 @@ class AllPosts extends Component {
                 </button>
               )}
               <Link to={`/singlepost/${post.id}`}>Open Post</Link>
-              <Comments postId={post.id}/>
+              <Comments postId={post.id} />
             </div>
           ))}
       </div>

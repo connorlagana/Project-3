@@ -168,11 +168,13 @@ $gray-primary: rgb(71, 71, 71);
     width: 180px;
     border: none;
     border-radius: 8px;
-    color: white;
+    color: black;
+    background-color: white;
   }
 
   & button:hover {
     background-color: black;
+    color: white;
     cursor: pointer;
     transition: background-color 1s;
     transition-timing-function: ease;

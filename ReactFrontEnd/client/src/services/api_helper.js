@@ -40,6 +40,7 @@ export const newPost = async newPost => {
 };
 
 export const deletePost = async id => {
+  console.log(id);
   const resp = await api.delete(`/posts/${id}`);
   return resp.data;
 };
