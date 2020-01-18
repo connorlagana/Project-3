@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 class CreateComment extends Component {
   constructor(props) {
     super(props);
@@ -16,27 +15,34 @@ class CreateComment extends Component {
     });
   };
 
-  // handleSubmit = async e => {
-  //   e.preventDefault();
-  //   try {
-  //     const resp = newComment({ comment: this.state.comment, postId: this.props.postId });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  reset = e => {
+    e.preventDefault();
+    console.log("test");
+    this.setState({
+      comment: ""
+    });
+  };
 
   render() {
     console.log(this.props.postId);
     return (
-      <form className="createComment" onSubmit={e => this.props.handleSubmit(e, this.state.comment)}>
+      <form
+        className="createComment"
+        onSubmit={e => {
+          this.props.handleSubmit(e, this.state.comment);
+          this.reset(e);
+        }}
+      >
         <input
+          className="inputText"
           type="text"
           name="comment"
           placeholder="comment"
+          value={this.state.comment}
           onChange={this.onChange}
           required
         />
-        <input type="submit" value="Comment" />
+        <input className="inputSubmit" type="submit" value="Comment" />
       </form>
     );
   }

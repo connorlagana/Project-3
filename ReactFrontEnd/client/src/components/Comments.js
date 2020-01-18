@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import { showCommentPost, newComment } from "../services/api_helper";
+import {
+  showCommentPost,
+  newComment,
+  deletComment
+} from "../services/api_helper";
 
 import CreateComment from "./CreateComment";
 
@@ -23,7 +27,7 @@ class Comments extends Component {
 
   handleSubmit = async (e, commentText) => {
     e.preventDefault();
-    console.log("submit comment triggered")
+    console.log("submit comment triggered");
     try {
       const resp = await newComment({
         comment: commentText,
@@ -37,21 +41,38 @@ class Comments extends Component {
     }
   };
 
+  handleDelete = async (e, commentId) => {
+    e.preventDefault();
+    console.log(commentId);
+    try {
+      await deletComment(commentId);
+      const comments = this.state.comments.filter(comment => comment.id !== commentId);
+      this.setState({
+        comments
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   render() {
     console.log(this.state.comments);
     return (
-      <>
+      <div className="commentSection">
         {this.state.apiDataLoaded &&
-          this.state.comments.map((post, id) => (
-            <div key={id}>
-              <p>{post.comment}</p>
+          this.state.comments.map((comment, id) => (
+            <div key={id} className="singleComment">
+              <p>{comment.comment}</p>
+              <button onClick={e => this.handleDelete(e, comment.id)}>
+                <i class="fa fa-trash"></i>
+              </button>
             </div>
           ))}
         <CreateComment
           postId={this.props.postId}
           handleSubmit={this.handleSubmit}
         />
-      </>
+      </div>
     );
   }
 }
