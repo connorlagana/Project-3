@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-
-import { newPost } from "../services/api_helper"
+import { newPost } from "../services/api_helper";
 
 class CreatePost extends Component {
   constructor(props) {

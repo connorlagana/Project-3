@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ProfileHeader from "./ProfileHeader.js";
 import ProfPost from "./ProfPost.js";
-import axios from "axios";
+import { userDetails, postDetails } from "../../services/api_helper";
 
 class Profile extends Component {
   constructor(props) {
@@ -16,13 +16,8 @@ class Profile extends Component {
 
   async componentDidMount() {
     try {
-      const userRes = await axios.get(
-        `http://localhost:3001/users/${this.props.userId}`
-      );
-      const postRes = await axios.get(
-        `http://localhost:3001/posts/user/${this.props.userId}`
-      );
-
+      const userRes = await userDetails(this.props.userId);
+      const postRes = await postDetails(this.props.userId);
       this.setState({
         name: userRes.data.username,
         image_url: userRes.data.image_url,

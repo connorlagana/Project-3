@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import "./App.scss";
-import { loginUser, registerUser, verifyUser } from "./services/api_helper";
 import { Route, Switch, Redirect } from "react-router-dom";
+
+// API Calls
+import { loginUser, registerUser, verifyUser } from "./services/api_helper";
+
+// Custom Components
 import Login from "./components/Login.js";
 import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
@@ -10,6 +14,7 @@ import AllPosts from "./components/AllPosts.js";
 import SinglePost from "./components/SinglePost";
 import UpdatePost from "./components/UpdatePost.js";
 import Register from "./components/Register";
+import FriendList from "./components/FriendList";
 
 class App extends Component {
   constructor(props) {
@@ -50,7 +55,6 @@ class App extends Component {
 
   handleVerify = async () => {
     const currentUser = await verifyUser();
-    console.log(currentUser);
     if (currentUser) {
       this.setState({
         currentUser
@@ -89,7 +93,8 @@ class App extends Component {
         ) : (
           <>
             <Redirect to="/home" />
-            <Header handleLogout={this.handleLogout} />
+              <Header handleLogout={this.handleLogout} />
+              <FriendList />
             <Switch>
               <Route
                 exact
@@ -98,7 +103,11 @@ class App extends Component {
               />
               <Route exact path="/singlepost/:id" component={SinglePost} />
               <Route exact path="/createPost" render={() => <CreatePost />} />
-                <Route exact path="/profile" render={() => <Profile userId={this.state.currentUser.id}/>} />
+              <Route
+                exact
+                path="/profile"
+                render={() => <Profile userId={this.state.currentUser.id} />}
+              />
               <Route exact path="/updatePost/:id" component={UpdatePost} />
             </Switch>
           </>
