@@ -1,20 +1,23 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = (props) => {
+const Header = props => {
   return (
     <div className="headerRay">
-      <img src="www.google.com" alt="logo"/>
+      <img
+        src="https://www.freeiconspng.com/uploads/instagram-photo-camera-logo-outline-icons--free-download-14.jpg"
+        alt="Foodstagram"
+        className="logoHeader"
+      />
       <h1>FOODSTAGRAM</h1>
       <nav>
         <Link to="/home"> Home </Link>
         <Link to="/createPost"> Create Post</Link>
         <Link to="/profile"> Profile</Link>
-        <button onClick={props.handleLogout}>Logout</button>
+        <button onClick={e => props.handleLogout(e)}>Logout</button>
       </nav>
-      
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Header
+export default Header;
