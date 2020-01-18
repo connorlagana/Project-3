@@ -24,7 +24,6 @@ class CreateComment extends Component {
   };
 
   render() {
-    console.log(this.props.postId);
     return (
       <form
         className="createComment"

@@ -1,5 +1,9 @@
 $gray-primary: rgb(71, 71, 71);
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -14,14 +18,18 @@ $gray-primary: rgb(71, 71, 71);
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   margin: 0vh 0 4vh 0;
   padding: 1vh;
+  background-color: white;
+  box-shadow: 5px 5px 5px $gray-primary;
 
   & h1 {
-    position: absolute;
+    position: fixed;
     display: inline-block;
-    top: 2;
+    top: 0;
     left: 50vw;
     transform: translate(-50%);
   }
@@ -42,7 +50,7 @@ $gray-primary: rgb(71, 71, 71);
 
 .allPosts {
   max-width: 50vw;
-  margin: 0 auto;
+  margin-top: 12vh;
   overflow: hidden;
 
   & .posts {
@@ -270,5 +278,51 @@ $gray-primary: rgb(71, 71, 71);
     background-color: $gray-primary;
     padding: .5vh .5vw;
     font-size: 1em;
+  }
+}
+
+.friendList {
+  position: fixed;
+  left: 7vw;
+  top: 50vh;
+  transform: translateY(-50%);
+  height: 50vh;
+  width: 10vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: solid 1px $gray-primary;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  
+
+  & .indUser {
+    margin: 0.5vh 0.5vw;
+    padding: 0;
+    width: 7vw;
+    border-bottom: .5px solid lightgray;
+
+    & .endfix {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: .5vh;
+    }
+  }
+
+  & img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  & p {
+    margin: 0;
+    padding: 0;
+    font-size: .8em;
   }
 }

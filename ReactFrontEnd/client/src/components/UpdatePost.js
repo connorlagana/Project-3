@@ -1,16 +1,15 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 import { updatePost, showPost } from "../services/api_helper";
-
 
 export default class UpdatePost extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       title: "",
       image_url: "",
       description: "",
       post: null
-    }
+    };
   }
 
   async componentDidMount() {
@@ -21,29 +20,29 @@ export default class UpdatePost extends Component {
         title: resp.title,
         image_url: resp.image_url,
         description: resp.description
-      })
+      });
     } catch (e) {
       console.log(e);
     }
   }
 
-  handleChange = (e) => {
-    const { name, value } = e.target
+  handleChange = e => {
+    const { name, value } = e.target;
     this.setState({
       [name]: value
-    })
-
-  }
+    });
+  };
 
   render() {
     return (
       <div>
-
-        <img src={this.state.image_url} alt="post" id="postImage"/>
-        <form onSubmit={(e) => {
-          e.preventDefault()
-          updatePost(this.props.match.params.id, this.state)
-        }}>
+        <img src={this.state.image_url} alt="post" id="postImage" />
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            updatePost(this.props.match.params.id, this.state);
+          }}
+        >
           <label htmlFor="name">name</label>
           <input
             type="text"
@@ -67,12 +66,11 @@ export default class UpdatePost extends Component {
             value={this.state.description}
             onChange={this.handleChange}
           />
-          
+
           <br />
           <button type="submit">Update Post </button>
-
         </form>
       </div>
-    )
+    );
   }
 }

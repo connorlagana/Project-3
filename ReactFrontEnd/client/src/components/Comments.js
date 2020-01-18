@@ -18,7 +18,6 @@ class Comments extends Component {
 
   componentDidMount = async () => {
     const comments = await showCommentPost(this.props.postId);
-    console.log(comments);
     this.setState({
       comments,
       apiDataLoaded: true
@@ -46,7 +45,9 @@ class Comments extends Component {
     console.log(commentId);
     try {
       await deletComment(commentId);
-      const comments = this.state.comments.filter(comment => comment.id !== commentId);
+      const comments = this.state.comments.filter(
+        comment => comment.id !== commentId
+      );
       this.setState({
         comments
       });
@@ -56,7 +57,6 @@ class Comments extends Component {
   };
 
   render() {
-    console.log(this.state.comments);
     return (
       <div className="commentSection">
         {this.state.apiDataLoaded &&
@@ -64,7 +64,7 @@ class Comments extends Component {
             <div key={id} className="singleComment">
               <p>{comment.comment}</p>
               <button onClick={e => this.handleDelete(e, comment.id)}>
-                <i class="fa fa-trash"></i>
+                <i className="fa fa-trash"></i>
               </button>
             </div>
           ))}

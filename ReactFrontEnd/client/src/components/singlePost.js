@@ -61,7 +61,7 @@ class SinglePost extends Component {
                 Delete
               </button>
             )}
-            <Comments postId={this.state.post.id}/>
+            <Comments postId={this.state.post.id} />
           </div>
         )}
       </div>

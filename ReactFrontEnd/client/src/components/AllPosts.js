@@ -17,7 +17,6 @@ class AllPosts extends Component {
   componentDidMount = async () => {
     try {
       const results = await axios.get("http://localhost:3001/posts");
-      console.log(results.data);
       this.setState({
         posts: results.data,
         apiDataLoaded: true,

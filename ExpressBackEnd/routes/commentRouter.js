@@ -14,7 +14,6 @@ commentRouter
     }
   })
   .post(restrict, async (req, res) => {
-    console.log(res.locals.user.id);
     try {
       const comment = await Comment.create({
         ...req.body,

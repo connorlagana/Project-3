@@ -12,6 +12,11 @@ const api_helper = resp => {
   return resp.data.user;
 };
 
+export const allUsers = async () => {
+  const resp = await api.get("/users");
+  return resp;
+}
+
 export const loginUser = async loginData => {
   const resp = await api.post("/users/login", loginData);
   return api_helper(resp);
@@ -31,6 +36,11 @@ export const verifyUser = async () => {
   }
   return false;
 };
+
+export const userDetails = async (userId) => {
+  const resp = await api.get(`/users/${userId}`);
+  return resp;
+}
 
 // NEW POST API_HELPER API CALLS
 
@@ -55,6 +65,11 @@ export const updatePost = async (id, updateData) => {
   return resp.data;
 };
 
+export const postDetails = async (id) => {
+  const resp = await api.get(`/posts/user/${id}`);
+  return resp;
+}
+
 // NEW COMMENT API_HELPER API CALLS
 
 export const newComment = async newPost => {
@@ -72,10 +87,10 @@ export const showComment = async () => {
   return resp.data;
 };
 
-export const showCommentPost = async (postId) => {
+export const showCommentPost = async postId => {
   const resp = await api.get(`/comments/allComments/${postId}`);
   return resp.data;
-}
+};
 
 export const updateComment = async (id, updateData) => {
   const resp = await api.put(`/comments/${id}`, updateData);
