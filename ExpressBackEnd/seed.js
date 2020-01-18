@@ -41,7 +41,7 @@ const seed = async () => {
     email: "braam.lagana@gmail.com",
     description:
       "im a braam burg",
-    image_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjPop_xxIvnAhV0Ap0JHTrpCTAQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.apple.com%2F&psig=AOvVaw07Pj4KA8yt01L5chTe1mwa&ust=1579381543381185"
+    image_url: "https://yt3.ggpht.com/a-/ACSszfF5P8d6gG0CFd25XJ1t-XhKv0EfR7u5uTMPlA=s900-mo-c-c0xffffffff-rj-k-no"
   });
   const ray = await User.create({
     username: "ray",
@@ -50,7 +50,7 @@ const seed = async () => {
     email: "ray.lagana@gmail.com",
     description:
       "easy peasy",
-    image_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.facilityexecutive.com%2Fwp-content%2Fuploads%2F2019%2F10%2FThumbs.Up_-503x300.jpg&imgrefurl=https%3A%2F%2Ffacilityexecutive.com%2F2019%2F10%2Ffriday-funny-go-ahead-give-your-boss-a-thumbs-up%2F&docid=UKLkJjJdf-T4PM&tbnid=V5czkcw_vsIX-M%3A&vet=10ahUKEwi4xPWoxYvnAhXJqlkKHTgmDBwQMwiBASgEMAQ..i&w=503&h=300&bih=723&biw=619&q=thumbs%20up&ved=0ahUKEwi4xPWoxYvnAhXJqlkKHTgmDBwQMwiBASgEMAQ&iact=mrc&uact=8"
+    image_url: "https://bayfield.ca/wp-content/uploads/2018/10/Raymond-Yen-215x300.jpg"
   });
 
   const post1 = await Post.create({
@@ -62,15 +62,29 @@ const seed = async () => {
     location: "New York, US"
   });
 
+  const post2 = await Post.create({
+    title: "I'm Freaking Bad-Ass Ray Donovan!",
+    image_url: "https://cdn1-www.comingsoon.net/assets/uploads/2018/08/Ray-Donovan.jpg",
+    description: "If you need a fixer for your problems, give me a call...",
+    location: "New York, US"
+  })
+
   await nadine.addPost(post1);
+  await Braam.addPost(post2);
 
   const comment1 = await Comment.create({
     comment:
       "Hi Connor here! I adore you! I think you're the best! Please accept my friend invite on Foodstagram!"
   });
 
+  const comment2 = await Comment.create({
+    comment: "You're a bloody legend mate!"
+  })
+
   await post1.addComment(comment1);
   await connor.addComment(comment1);
+  await post2.addComment(comment2);
+  await Braam.addComment(comment2);
 
   process.exit();
 };

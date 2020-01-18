@@ -15,18 +15,23 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
-    const userRes = await axios.get("http://localhost:3001/users/2");
+    try {
+      const userRes = await axios.get(
+        `http://localhost:3001/users/${this.props.userId}`
+      );
+      const postRes = await axios.get(
+        `http://localhost:3001/posts/user/${this.props.userId}`
+      );
 
-    const postRes = await axios.get("http://localhost:3001/posts/user/2");
-    console.log(postRes);
-
-    this.setState({
-      name: userRes.data.username,
-      image_url: userRes.data.image_url,
-      description: userRes.data.description,
-      posts: postRes.data
-    });
-    console.log(this.state.posts);
+      this.setState({
+        name: userRes.data.username,
+        image_url: userRes.data.image_url,
+        description: userRes.data.description,
+        posts: postRes.data
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   render() {

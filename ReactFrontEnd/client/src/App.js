@@ -98,7 +98,7 @@ class App extends Component {
               />
               <Route exact path="/singlepost/:id" component={SinglePost} />
               <Route exact path="/createPost" render={() => <CreatePost />} />
-              <Route exact path="/profile" render={() => <Profile />} />
+                <Route exact path="/profile" render={() => <Profile userId={this.state.currentUser.id}/>} />
               <Route exact path="/updatePost/:id" component={UpdatePost} />
             </Switch>
           </>
