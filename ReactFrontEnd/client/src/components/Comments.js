@@ -7,7 +7,7 @@ class Comments extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: "",
+      comments: [],
       apiDataLoaded: false
     };
   }
@@ -23,9 +23,9 @@ class Comments extends Component {
 
   handleSubmit = async (e, commentText) => {
     e.preventDefault();
-    const resp = "";
+    console.log("submit comment triggered")
     try {
-      resp = newComment({
+      const resp = await newComment({
         comment: commentText,
         postId: this.props.postId
       });

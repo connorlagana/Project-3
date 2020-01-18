@@ -62,7 +62,6 @@ userRouter.post("/login", async (req, res) => {
       const respData = buildAuthResponse(user);
 
       res.json(respData);
-      // res.json("Succesfull logged in")
     } else {
       res.status(401).send("Invalid Credentials");
     }
