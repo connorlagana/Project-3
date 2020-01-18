@@ -17,8 +17,6 @@ commentRouter
     console.log(res.locals.user.id);
     try {
       const comment = await Comment.create({
-        //       comment: req.body.comment,
-        // postId: req.body.postId,
         ...req.body,
         userId: res.locals.user.id
       });

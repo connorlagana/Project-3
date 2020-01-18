@@ -25,14 +25,24 @@ postRouter
     }
   });
 
-postRouter.route("/:id").get(async (req, res) => {
-  try {
-    const post = await Post.findByPk(req.params.id);
-    res.json(post);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-});
+postRouter
+  .route("/:id")
+  .get(async (req, res) => {
+    try {
+      const post = await Post.findByPk(req.params.id);
+      res.json(post);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  })
+  .delete(restrict, async (req, res) => {
+    try {
+      const post = await Post.destroy({ where: { id: req.params.id } });
+      res.json(post);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  });
 
 postRouter
   .route("/user/:userid")
@@ -46,20 +56,10 @@ postRouter
       res.json({ error: e.message });
     }
   })
-
   .put(restrict, async (req, res) => {
     try {
       const post = await Post.findByPk(req.params.id);
       await post.update(req.body);
-      res.json(post);
-    } catch (e) {
-      res.json({ error: e.message });
-    }
-  })
-
-  .delete(restrict, async (req, res) => {
-    try {
-      const post = await Post.destroy({ where: { id: req.params.id } });
       res.json(post);
     } catch (e) {
       res.json({ error: e.message });
