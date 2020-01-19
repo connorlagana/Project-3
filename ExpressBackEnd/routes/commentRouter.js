@@ -52,7 +52,7 @@ commentRouter
   .put(restrict, async (req, res, next) => {
     try {
       const comment = await Comment.findByPk(req.params.id);
-      await post.update(req.body);
+      await comment.update(req.body);
       res.json(comment);
     } catch (e) {
       res.json({ error: e.message });

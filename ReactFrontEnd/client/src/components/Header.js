@@ -11,9 +11,9 @@ const Header = props => {
       />
       <h1>FOODSTAGRAM</h1>
       <nav>
-        <Link to="/home"> Home </Link>
-        <Link to="/createPost"> Create Post</Link>
-        <Link to="/profile"> Profile</Link>
+        <Link to="/home">Home</Link>
+        <Link to="/createPost">Create Post</Link>
+        <Link to="/profile">{props.userName}</Link>
         <button onClick={e => props.handleLogout(e)}>Logout</button>
       </nav>
     </div>

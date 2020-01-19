@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import { userDetails, postDetails } from "../../services/api_helper";
+
+// Custom Component
 import ProfileHeader from "./ProfileHeader.js";
 import ProfPost from "./ProfPost.js";
-import { userDetails, postDetails } from "../../services/api_helper";
+import Followers from "./Followers";
 
 class Profile extends Component {
   constructor(props) {
@@ -10,7 +13,8 @@ class Profile extends Component {
       name: "",
       image_url: "",
       description: "",
-      posts: []
+      posts: [],
+      followers: []
     };
   }
 
@@ -22,7 +26,8 @@ class Profile extends Component {
         name: userRes.data.username,
         image_url: userRes.data.image_url,
         description: userRes.data.description,
-        posts: postRes.data
+        posts: postRes.data,
+        followers: userRes.data.followers
       });
     } catch (e) {
       console.log(e);
@@ -42,6 +47,7 @@ class Profile extends Component {
           profImage={this.state.image_url}
           name={this.state.name}
         />
+        <Followers followers={this.state.followers} />
       </div>
     );
   }

@@ -32,7 +32,8 @@ User.init(
     usertag: Sequelize.TEXT,
     image_url: Sequelize.TEXT,
     description: Sequelize.TEXT,
-    email: Sequelize.TEXT
+    email: Sequelize.TEXT, 
+    followers: Sequelize.ARRAY(Sequelize.TEXT)
   },
   {
     sequelize,
