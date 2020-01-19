@@ -11,10 +11,8 @@ class FriendList extends Component {
   }
 
   componentDidMount = async () => {
-    console.log("FriendList Comp");
     try {
       const resp = await allUsers();
-      console.log(resp.data);
       this.setState({
         users: resp.data,
         apiDataLoaded: true
@@ -30,7 +28,9 @@ class FriendList extends Component {
         {this.state.apiDataLoaded &&
           this.state.users.map((user, index) => (
             <div className="indUser" key={index}>
-              <img src={user.image_url} alt="userpic" />
+              <div className="imageContainer">
+                <img src={user.image_url} alt="userpic" />
+              </div>
               <div className="endfix">
                 <>
                   <p>{user.usertag}</p>

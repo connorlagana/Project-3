@@ -13,7 +13,8 @@ const seed = async () => {
     description: "I am the admin, and you will do as I say",
     image_url:
       "https://townsquare.media/site/555/files/2012/11/bill-gates.jpg?w=980&q=75",
-    usertag: "@admin"
+    usertag: "@admin",
+    followers: [1, 2, 3, 4]
   });
 
   const nadine = await User.create({
@@ -24,7 +25,8 @@ const seed = async () => {
     description: "I am hot ❤️",
     image_url:
       "https://instagram.fbos1-2.fna.fbcdn.net/v/t51.2885-15/e35/c0.84.1440.1440a/s480x480/80639098_2970545682967133_2054395431913772393_n.jpg?_nc_ht=instagram.fbos1-2.fna.fbcdn.net&_nc_cat=105&_nc_ohc=-dqkfokiFFwAX__P5dE&oh=9b9703f3bd1170212fbfa077fce9ac98&oe=5EA76728",
-    usertag: "@nadje"
+    usertag: "@nadje",
+    followers: [1, 2, 3, 4]
   });
 
   const connor = await User.create({
@@ -35,7 +37,8 @@ const seed = async () => {
     description:
       "Whattup! I'm connor and I lay the pipe whilst also getting this bread",
     image_url: "https://imgur.com/SIpJ5PD.jpg",
-    usertag: "@conner_420"
+    usertag: "@conner_420", 
+    followers: [1, 2, 3, 4]
   });
   const Braam = await User.create({
     username: "Braam",
@@ -45,7 +48,8 @@ const seed = async () => {
     description:
       "im a braam burg",
     image_url: "https://yt3.ggpht.com/a-/ACSszfF5P8d6gG0CFd25XJ1t-XhKv0EfR7u5uTMPlA=s900-mo-c-c0xffffffff-rj-k-no",
-    usertag: "@dutcherian"
+    usertag: "@dutcherian",
+    followers: [1, 2, 3, 4]
   });
   const ray = await User.create({
     username: "ray",
@@ -55,7 +59,8 @@ const seed = async () => {
     description:
       "easy peasy",
     image_url: "https://bayfield.ca/wp-content/uploads/2018/10/Raymond-Yen-215x300.jpg",
-    usertag: "@marvelHero"
+    usertag: "@marvelHero",
+    followers: [1, 2, 3, 4]
   });
 
   const post1 = await Post.create({

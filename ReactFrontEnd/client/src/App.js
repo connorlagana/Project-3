@@ -15,6 +15,7 @@ import SinglePost from "./components/SinglePost";
 import UpdatePost from "./components/UpdatePost.js";
 import Register from "./components/Register";
 import FriendList from "./components/FriendList";
+import Footer from "./components/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {!this.state.currentUser ? (
+        {!this.state.currentUser.username ? (
           <>
             <Redirect to="/" />
             <Route
@@ -93,8 +94,8 @@ class App extends Component {
         ) : (
           <>
             <Redirect to="/home" />
-              <Header handleLogout={this.handleLogout} />
-              <FriendList />
+            <Header handleLogout={this.handleLogout} userName={this.state.currentUser.username} />
+            <FriendList />
             <Switch>
               <Route
                 exact
@@ -110,6 +111,7 @@ class App extends Component {
               />
               <Route exact path="/updatePost/:id" component={UpdatePost} />
             </Switch>
+            <Footer />
           </>
         )}
       </div>

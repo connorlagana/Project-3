@@ -41,25 +41,28 @@ class CreatePost extends Component {
         <input
           type="text"
           name="title"
-          placeholder="title"
+          placeholder="Title"
+          value={this.state.posts.title}
           onChange={this.onChange}
           required
         />
         <input
           type="text"
           name="image_url"
-          placeholder="image url"
+          placeholder="Image Url"
+          value={this.state.posts.image_url}
           onChange={this.onChange}
           required
         />
         <input
           type="text"
           name="description"
-          placeholder="description"
+          placeholder="Description"
+          value={this.state.posts.description}
           onChange={this.onChange}
           required
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Post" className="submit" />
       </form>
     );
   }
