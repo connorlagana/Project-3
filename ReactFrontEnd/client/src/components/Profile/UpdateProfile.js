@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { updatePost, showPost } from "../services/api_helper";
+import { updateUser, userDetails } from "../../services/api_helper";
 
-export default class UpdatePost extends Component {
+export default class UpdateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
+      usertag: "",
+      username: "",
       image_url: "",
       description: "",
     };
@@ -14,11 +15,12 @@ export default class UpdatePost extends Component {
   async componentDidMount() {
     const id = this.props.match.params.id;
     try {
-      const resp = await showPost(id);
+      const resp = await userDetails(id);
       this.setState({
-        title: resp.title,
-        image_url: resp.image_url,
-        description: resp.description
+        usertag: resp.data.usertag,
+        username: resp.data.username,
+        image_url: resp.data.image_url,
+        description: resp.data.description
       });
     } catch (e) {
       console.log(e);
@@ -30,12 +32,9 @@ export default class UpdatePost extends Component {
     this.setState({
       [name]: value
     });
-  }
-  render() {
-    console.log(this.props.location)
-    console.log(this.props.history)
+  };
 
-    console.log(this.props)
+  render() {
     return (
       <div className="allPosts">
         <div className="posts">
@@ -43,15 +42,23 @@ export default class UpdatePost extends Component {
           <form
           onSubmit={e => {
             e.preventDefault();
-            updatePost(this.props.match.params.id, this.state);
-            this.props.history.push("/home")
+            updateUser(this.props.match.params.id, this.state);
           }}
           >
+          <label htmlFor="name">usertag</label>
+          <input
+            type="text"
+            name="usertag"
+            value={this.state.usertag}
+            onChange={this.handleChange}
+          />
+          <br />
+          
           <label htmlFor="name">name</label>
           <input
             type="text"
-            name="title"
-            value={this.state.title}
+            name="username"
+            value={this.state.username}
             onChange={this.handleChange}
           />
           <br />

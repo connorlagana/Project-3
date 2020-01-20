@@ -41,7 +41,7 @@ class Followers extends Component {
           this.state.friends.map((element, index) => (
             <div style={element} key={index} className="followersProfile">
               <h6>{element.username}</h6>
-              <img src={element.image_url} />
+              <img src={element.image_url} alt="profilePic"/>
             </div>
           ))}
       </div>

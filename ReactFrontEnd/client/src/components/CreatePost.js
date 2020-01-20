@@ -37,33 +37,38 @@ class CreatePost extends Component {
 
   render() {
     return (
-      <form className="createPost" onSubmit={e => this.handleSubmit(e)}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          value={this.state.posts.title}
-          onChange={this.onChange}
-          required
-        />
-        <input
-          type="text"
-          name="image_url"
-          placeholder="Image Url"
-          value={this.state.posts.image_url}
-          onChange={this.onChange}
-          required
-        />
-        <input
-          type="text"
-          name="description"
-          placeholder="Description"
-          value={this.state.posts.description}
-          onChange={this.onChange}
-          required
-        />
-        <input type="submit" value="Post" className="submit" />
-      </form>
+      <div className="allPosts">
+        <div className="posts">
+          {this.state.image_url && <img src={this.state.image_url} alt="post" id="postImage" />}
+          <form className="createPost" onSubmit={e => this.handleSubmit(e)}>
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              value={this.state.posts.title}
+              onChange={this.onChange}
+              required
+            />
+            <input
+              type="text"
+              name="image_url"
+              placeholder="Image Url"
+              value={this.state.posts.image_url}
+              onChange={this.onChange}
+              required
+            />
+            <input
+              type="text"
+              name="description"
+              placeholder="Description"
+              value={this.state.posts.description}
+              onChange={this.onChange}
+              required
+            />
+            <input type="submit" value="Post" className="submit" />
+          </form>
+        </div>
+      </div>
     );
   }
 }
