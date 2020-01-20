@@ -11,7 +11,7 @@ import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
 import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
-import SinglePost from "./components/SinglePost";
+import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
 import Register from "./components/Register";
 import FriendList from "./components/FriendList";

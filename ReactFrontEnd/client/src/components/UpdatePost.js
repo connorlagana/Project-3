@@ -8,7 +8,6 @@ export default class UpdatePost extends Component {
       title: "",
       image_url: "",
       description: "",
-      post: null
     };
   }
 
@@ -35,14 +34,15 @@ export default class UpdatePost extends Component {
 
   render() {
     return (
-      <div>
-        <img src={this.state.image_url} alt="post" id="postImage" />
-        <form
+      <div className="allPosts">
+        <div className="posts">
+          <img src={this.state.image_url} alt="post" id="postImage" />
+          <form
           onSubmit={e => {
             e.preventDefault();
             updatePost(this.props.match.params.id, this.state);
           }}
-        >
+          >
           <label htmlFor="name">name</label>
           <input
             type="text"
@@ -51,7 +51,7 @@ export default class UpdatePost extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <label htmlFor="image_url">Inamge url</label>
+          <label htmlFor="image_url">Image url</label>
           <input
             type="text"
             name="image_url"
@@ -69,7 +69,8 @@ export default class UpdatePost extends Component {
 
           <br />
           <button type="submit">Update Post </button>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }
