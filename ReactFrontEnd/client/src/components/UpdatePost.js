@@ -30,9 +30,12 @@ export default class UpdatePost extends Component {
     this.setState({
       [name]: value
     });
-  };
-
+  }
   render() {
+    console.log(this.props.location)
+    console.log(this.props.history)
+
+    console.log(this.props)
     return (
       <div className="allPosts">
         <div className="posts">
@@ -41,6 +44,7 @@ export default class UpdatePost extends Component {
           onSubmit={e => {
             e.preventDefault();
             updatePost(this.props.match.params.id, this.state);
+            this.props.history.push("/home")
           }}
           >
           <label htmlFor="name">name</label>
