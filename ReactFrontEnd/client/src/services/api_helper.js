@@ -41,6 +41,10 @@ export const userDetails = async (userId) => {
   const resp = await api.get(`/users/${userId}`);
   return resp;
 }
+export const updateUser = async (id, updateData) => {
+  const resp = await api.put(`/users/${id}`, updateData);
+  return resp.data;
+};
 
 // NEW POST API_HELPER API CALLS
 
