@@ -23,8 +23,10 @@ postRouter
     } catch (e) {
       res.json({ error: e.message });
     }
+    
   });
 
+  
 postRouter
   .route("/:id")
   .get(async (req, res) => {
@@ -42,8 +44,16 @@ postRouter
     } catch (e) {
       res.json({ error: e.message });
     }
+  })
+  .put(restrict, async (req, res) => {
+    try {
+      const post = await Post.findByPk(req.params.id);
+      await post.update(req.body);
+      res.json(post);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
   });
-
 postRouter
   .route("/user/:userid")
   .get(async (req, res) => {
