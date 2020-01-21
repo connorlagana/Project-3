@@ -192,7 +192,7 @@ $gray-primary: rgb(71, 71, 71);
       & #bottomLogin {
         display: flex;
         flex-direction: row;
-        transition: color 0.4s;
+        transition: color 0.3s;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -200,11 +200,10 @@ $gray-primary: rgb(71, 71, 71);
         font-weight: 100;
         width: 400px;
         text-decoration: none;
-
         & .signup {
           color: #f7797d;
           font-weight: 700;
-          transition: color 0.4s;
+          transition: color 0.2s;
         }
 
         & #arrowRight {
@@ -216,6 +215,9 @@ $gray-primary: rgb(71, 71, 71);
       }
       & #bottomLogin :hover {
         color: #5af798;
+      }
+      & #bottomLogin:hover #arrowRight {
+        padding-left: 20px;
       }
     }
   }

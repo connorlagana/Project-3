@@ -62,11 +62,14 @@ class Login extends Component {
                     required
                   />
                 </div>
+
                 <button id="loginButton">Login</button>
-                <Link to="/register" id="bottomLogin">
-                  <p className="signup">Not a member? Click to sign up</p>
-                  <KeyboardArrowRight color="secondary" id="arrowRight" />
-                </Link>
+                <div id="newHoverDiv">
+                  <Link to="/register" id="bottomLogin">
+                    <p className="signup">Not a member? Click to sign up</p>
+                    <KeyboardArrowRight color="secondary" id="arrowRight" />
+                  </Link>
+                </div>
               </form>
             </div>
           </div>
