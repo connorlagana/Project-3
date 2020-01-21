@@ -64,7 +64,7 @@ class FriendList extends Component {
         <h1>Other Users:</h1>
         <div id="belowOtherUsers">
           {this.state.apiDataLoaded &&
-            this.state.users.map((index, user) => (
+            this.state.users.map((user, index) => (
               <div className="indUser" key={index}>
                 <div className="imageContainer">
                   <img src={user.image_url} alt="userpic" />
