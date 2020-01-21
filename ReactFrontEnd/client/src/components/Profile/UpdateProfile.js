@@ -79,7 +79,7 @@ export default class UpdateProfile extends Component {
           />
 
           <br />
-          <button type="submit">Update Post </button>
+          <button type="submit">Update Profile</button>
           </form>
         </div>
       </div>

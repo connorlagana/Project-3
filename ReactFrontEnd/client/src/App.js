@@ -84,7 +84,11 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={() => <Login handleLogin={this.handleLogin} />}
+              render={() => (
+                <Login
+                  handleLogin={this.handleLogin}
+                />
+              )}
             />
             <Route
               exact
@@ -95,8 +99,11 @@ class App extends Component {
         ) : (
           <>
             <Redirect to="/home" />
-            <Header handleLogout={this.handleLogout} userName={this.state.currentUser.username} />
-              <FriendList currentUser={this.state.currentUser}/>
+            <Header
+              handleLogout={this.handleLogout}
+              userName={this.state.currentUser.username}
+            />
+            <FriendList currentUser={this.state.currentUser} />
             <Switch>
               <Route
                 exact
