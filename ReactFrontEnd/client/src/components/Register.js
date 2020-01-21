@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import fontLogo from "../images/fontLogo.png";
 
 class Register extends Component {
   constructor(props) {
@@ -6,7 +7,7 @@ class Register extends Component {
     this.state = {
       username: "",
       password: "",
-      next: false
+      imageUrl: ""
     };
   }
 
@@ -17,10 +18,22 @@ class Register extends Component {
     });
   };
 
+  registerUser = e => {
+    let usertag = this.state.username.split(" ").join("_");
+    this.props.handleRegister(e, {
+      username: this.state.username,
+      usertag: usertag,
+      password: this.state.password,
+      image_url: this.state.imageUrl
+    });
+  };
+
   render() {
     return (
       <div id="register">
+        <img id="fontLogo" src={fontLogo} />
         <div id="hello">Hello! Welcome to Foodstagram!</div>
+        <img src={this.state.imageUrl} id="imageRegister" />
         <input
           id="myName"
           type="text"
@@ -41,16 +54,17 @@ class Register extends Component {
           placeholder="Password123"
           required
         />
-        <button
-          className="buttonfx curtainup"
-          onClick={e =>
-            this.props.handleRegister(e, {
-              username: this.state.username,
-              password: this.state.password
-            })
-          }
-        >
-          Register
+        <input
+          id="myName"
+          type="text"
+          name="imageUrl"
+          value={this.state.imageUrl}
+          onChange={this.handleChange}
+          placeholder="Image URL"
+          required
+        />
+        <button className="buttonfx curtainup" onClick={this.registerUser}>
+          Next
         </button>
       </div>
     );

@@ -64,7 +64,6 @@ $gray-primary: rgb(71, 71, 71);
   margin-top: 12vh;
   overflow: hidden;
   & .posts {
-    
     & #threeCircles {
       border: none;
       box-shadow: none;
@@ -228,7 +227,7 @@ $gray-primary: rgb(71, 71, 71);
     align-items: space-around;
     margin: .5vh auto;
     padding: .5vh auto;
-
+    
     & img {
       display: inline-block;
       height: 10vh;
@@ -451,10 +450,25 @@ $gray-primary: rgb(71, 71, 71);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px;
+  margin: 10px;
   flex-direction: column;
   text-align: center;
   font-family: "Karla", sans-serif;
+
+  & #imageRegister {
+    height: 200px;
+    width: 200px;
+    background-color: gray;
+    border-radius: 300px;
+    object-fit: cover;
+  }
+
+  & #fontLogo {
+    width: 300px;
+    height: 100px;
+    margin: 0
+  }
+
   & #hello {
     font-size: 40px;
     margin: 50px;
