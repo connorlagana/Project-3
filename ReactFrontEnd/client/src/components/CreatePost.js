@@ -37,9 +37,12 @@ class CreatePost extends Component {
 
   render() {
     return (
-      <div className="allPosts">
-        <div className="posts">
-          {this.state.image_url && <img src={this.state.image_url} alt="post" id="postImage" />}
+      <div className="createPost">
+        <img src={this.state.image_url} />
+        <div className="createPostForm">
+          {this.state.image_url && (
+            <img src={this.state.image_url} alt="post" id="postImage" />
+          )}
           <form className="createPost" onSubmit={e => this.handleSubmit(e)}>
             <input
               type="text"
