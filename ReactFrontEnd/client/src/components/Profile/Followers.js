@@ -11,15 +11,11 @@ class Followers extends Component {
   }
 
   componentDidMount = () => {
-    setTimeout(this.getFriends, 500);
-    // setInterval(this.getFriends, 500);
+    setTimeout(this.getFriends, 1000);
   };
 
   getFriends = async () => {
     try {
-      this.setState({
-        friends: []
-      });
       const followersId = this.props.followers;
       console.log(followersId);
       followersId.map(async followerId => {
@@ -41,7 +37,7 @@ class Followers extends Component {
     console.log(this.state.friends);
     return (
       <div className="followers">
-        {this.state.friends.length > 0 &&
+        {this.state.apiDataLoaded ? (
           this.state.friends.map((element, index) => (
             <div style={element} key={index} className="followersProfile">
               <div className="followerDetails">
@@ -50,7 +46,15 @@ class Followers extends Component {
               </div>
               <img src={element.image_url} alt="profilePic" />
             </div>
-          ))}
+          ))
+        ) : (
+          <div className="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        )}
       </div>
     );
   }
