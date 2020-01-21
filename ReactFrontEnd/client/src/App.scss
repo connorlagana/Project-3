@@ -160,46 +160,62 @@ $gray-primary: rgb(71, 71, 71);
       align-items: center;
       position: relative;
 
-      & input {
-        border-width: 5px;
-        border-style: solid;
-        border-radius: 20px;
-        background-color: rgb(255, 255, 255);
-        border-color: linear-gradient(
+      & .borderInputLogin {
+        background: linear-gradient(
           to bottom left,
           #c6ffdd 0%,
           #fbd786 50%,
           #f7797d 100%
         );
+        border-radius: 500px;
+        margin: 5px;
+
+        & .inputLogin {
+          margin: 5px;
+          height: 20px;
+          border-radius: 10px;
+          box-shadow: none;
+          border: none;
+        }
       }
 
-      & input:nth-child(1),
-      input:nth-child(2) {
-        position: relative;
-        width: 80%;
-        margin: 2vh 1vw;
-        height: 40px;
-        border-radius: 10px;
-        text-align: center;
-        font-size: 1em;
+      & #loginButton {
+        height: 30px;
+        width: 150px;
+        box-shadow: none;
+        border: none;
+        border-radius: 20px;
+        margin: 5px;
+        background-color: #c6ffdd;
       }
-      & input:nth-child(3) {
-        width: 90%;
-        position: fixed;
-        bottom: 2vh;
-        height: 40px;
-        border-radius: 10px;
-      }
-      #bottomLogin {
+
+      & #bottomLogin {
+        display: flex;
+        flex-direction: row;
+        transition: color 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 100;
+        width: 400px;
+        text-decoration: none;
+
         & .signup {
           color: #f7797d;
           font-weight: 700;
-          text-decoration: none;
           transition: color 0.4s;
-          &:hover {
-            color: #c6ffdd;
-          }
         }
+
+        & #arrowRight {
+          color: #f7797d;
+          font-size: 30px;
+          transition: padding-left 0.2s;
+          position: static;
+        }
+      }
+      & #bottomLogin :hover {
+        color: #5af798;
       }
     }
   }
