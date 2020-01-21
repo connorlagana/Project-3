@@ -41,9 +41,9 @@ $gray-primary: rgb(71, 71, 71);
     align-items: center;
     width: 30vw;
   }
-  @media only screen and (max-width: 800px){
-    nav{
-    display:none
+  @media only screen and (max-width: 800px) {
+    nav {
+      display: none;
     }
   }
   & .logoHeader {
@@ -91,12 +91,11 @@ $gray-primary: rgb(71, 71, 71);
   }
 }
 #login {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  display: relative;
-  & #loginBackground img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & #gradientBG {
     position: fixed;
     left: 0;
     top: 0;
@@ -104,18 +103,27 @@ $gray-primary: rgb(71, 71, 71);
     width: 100vw;
     object-fit: cover;
     z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      to bottom left,
+      #c6ffdd 0%,
+      #fbd786 50%,
+      #f7797d 100%
+    );
   }
 }
 #backframeLogin {
   position: fixed;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  height: 500px;
-  width: 500px;
-  background-color: rgba(12, 12, 160, 0.7);
+  height: 80vh;
+  width: 80vw;
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   & form {
     display: flex;
     flex-direction: column;
@@ -469,46 +477,46 @@ $gray-primary: rgb(71, 71, 71);
   align-items: center;
   box-shadow: 5px -5px 5px $gray-primary;
 }
-.icon{
+.icon {
   display: none;
 }
 @media only screen and (max-width: 800px) {
-  .friendList{
+  .friendList {
     display: none;
   }
-  #backframeLogin{
-    width:90vw
+  #backframeLogin {
+    width: 90vw;
   }
-  .allPosts{
+  .allPosts {
     max-width: 95vw;
   }
-  .headerRay{
+  .headerRay {
     display: flex;
     flex-direction: column;
   }
-  .icon{
+  .icon {
     display: block;
     float: left;
   }
-  .allPosts{
-    margin-top:150px
+  .allPosts {
+    margin-top: 150px;
   }
-  nav{
+  nav {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute !important;
     margin-top: 140px;
     width: 100%;
-    left:0;
+    left: 0;
     z-index: inherit 99999 !important;
     & .hideOnMobile {
       display: none;
     }
-    
-    & .navItem{
+
+    & .navItem {
       background-color: grey;
-      opacity: .8;
+      opacity: 0.8;
       display: flex;
       flex-direction: column;
       margin: 40px;
@@ -517,10 +525,7 @@ $gray-primary: rgb(71, 71, 71);
       align-items: center;
     }
   }
-
 }
-
-
 
 #register {
   display: flex;
