@@ -5,8 +5,9 @@ class Register extends Component {
     super(props);
     this.state = {
       username: "",
+      usertag: "",
       password: "",
-      next: false
+      imageUrl: ""
     };
   }
 
@@ -17,10 +18,20 @@ class Register extends Component {
     });
   };
 
+  registerUser = e => {
+    this.props.handleRegister(e, {
+      username: this.state.username,
+      usertag: this.state.usertag,
+      password: this.state.password,
+      imageUrl: this.state.imageUrl
+    });
+  };
+
   render() {
     return (
       <div id="register">
         <div id="hello">Hello! Welcome to Foodstagram!</div>
+        <img src={this.state.imageUrl} id="imageRegister" />
         <input
           id="myName"
           type="text"
@@ -41,16 +52,17 @@ class Register extends Component {
           placeholder="Password123"
           required
         />
-        <button
-          className="buttonfx curtainup"
-          onClick={e =>
-            this.props.handleRegister(e, {
-              username: this.state.username,
-              password: this.state.password
-            })
-          }
-        >
-          Register
+        <input
+          id="myName"
+          type="text"
+          name="imageUrl"
+          value={this.state.imageUrl}
+          onChange={this.handleChange}
+          placeholder="Image URL"
+          required
+        />
+        <button className="buttonfx curtainup" onClick={this.registerUser}>
+          Next
         </button>
       </div>
     );

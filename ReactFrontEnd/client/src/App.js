@@ -78,7 +78,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {!this.state.currentUser ? (
+        {!this.state.currentUser.username ? (
           <>
             <Redirect to="/" />
             <Route

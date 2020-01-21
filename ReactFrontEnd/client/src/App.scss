@@ -454,6 +454,14 @@ $gray-primary: rgb(71, 71, 71);
   flex-direction: column;
   text-align: center;
   font-family: "Karla", sans-serif;
+
+  & #imageRegister {
+    height: 200px;
+    width: 200px;
+    background-color: gray;
+    border-radius: 300px;
+  }
+
   & #hello {
     font-size: 40px;
     margin: 50px;
