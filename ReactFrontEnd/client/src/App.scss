@@ -529,7 +529,7 @@ $gray-primary: rgb(71, 71, 71);
     display: block;
     float: left;
   }
-  .icon :active{
+  .icon:active{
     transition: all 1s ease-out;
   }
   .allPosts {
@@ -538,8 +538,7 @@ $gray-primary: rgb(71, 71, 71);
   .createPost{
     width: 80Vw
   }
-  nav{
-    
+  nav{ 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -548,9 +547,6 @@ $gray-primary: rgb(71, 71, 71);
     width: 100%;
     left:0;
     z-index: inherit 99999 !important;
-    & .hideOnMobile {
-      display: none;
-    }
     
     & .navItem{
       background-color: orange;
@@ -561,6 +557,9 @@ $gray-primary: rgb(71, 71, 71);
       padding: 50px;
       width: 65vw;
       align-items: center;
+    }
+    & .navItem:hover{
+      background-color: green;
     }
   }
 
