@@ -11,10 +11,18 @@ const Header = props => {
       />
       <h1>FOODSTAGRAM</h1>
       <nav>
-        <Link to="/home">Home</Link>
-        <Link to="/createPost">Create Post</Link>
-        <Link to="/profile">{props.userName}</Link>
-        <button onClick={e => props.handleLogout(e)}>Logout</button>
+        <Link to="/home" className="navItem">
+          Home
+        </Link>
+        <Link to="/createPost" className="navItem">
+          Create Post
+        </Link>
+        <Link to="/profile" className="navItem">
+          {props.userName}
+        </Link>
+        <Link onClick={e => props.handleLogout(e)} className="navItem">
+          Logout
+        </Link>
       </nav>
     </div>
   );
