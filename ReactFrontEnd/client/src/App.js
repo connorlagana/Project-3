@@ -22,7 +22,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: true,
+      currentUser: false,
       errorText: ""
     };
   }
@@ -95,7 +95,10 @@ class App extends Component {
         ) : (
           <>
             <Redirect to="/home" />
-            <Header handleLogout={this.handleLogout} userName={this.state.currentUser.username} />
+            <Header
+              handleLogout={this.handleLogout}
+              userName={this.state.currentUser.username}
+            />
             <FriendList />
             <Switch>
               <Route
@@ -111,7 +114,7 @@ class App extends Component {
                 render={() => <Profile userId={this.state.currentUser.id} />}
               />
               <Route exact path="/updatePost/:id" component={UpdatePost} />
-              
+
               <Route exact path="/users/:id" component={UpdateProfile} />
             </Switch>
             <Footer />
