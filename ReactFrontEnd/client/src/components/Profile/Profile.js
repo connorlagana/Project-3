@@ -41,6 +41,7 @@ class Profile extends Component {
           name={this.state.name}
           image_url={this.state.image_url}
           description={this.state.description}
+          id={this.props.userId}
         />
         <ProfPost
           posts={this.state.posts}

@@ -11,11 +11,12 @@ import Header from "./components/Header.js";
 import CreatePost from "./components/CreatePost";
 import Profile from "./components/Profile/Profile.js";
 import AllPosts from "./components/AllPosts.js";
-import SinglePost from "./components/SinglePost";
+import SinglePost from "./components/singlePost";
 import UpdatePost from "./components/UpdatePost.js";
 import Register from "./components/Register";
 import FriendList from "./components/FriendList";
 import Footer from "./components/Footer";
+import UpdateProfile from "./components/Profile/UpdateProfile";
 
 class App extends Component {
   constructor(props) {
@@ -110,6 +111,8 @@ class App extends Component {
                 render={() => <Profile userId={this.state.currentUser.id} />}
               />
               <Route exact path="/updatePost/:id" component={UpdatePost} />
+              
+              <Route exact path="/users/:id" component={UpdateProfile} />
             </Switch>
             <Footer />
           </>

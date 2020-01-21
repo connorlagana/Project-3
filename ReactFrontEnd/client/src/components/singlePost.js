@@ -20,7 +20,6 @@ class SinglePost extends Component {
     const id = this.props.match.params.id;
     try {
       const resp = await showPost(id);
-      console.log(resp);
       this.setState({
         post: resp,
         apiDataLoaded: true,
