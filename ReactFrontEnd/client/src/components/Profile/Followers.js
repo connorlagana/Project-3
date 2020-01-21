@@ -37,13 +37,24 @@ class Followers extends Component {
     console.log(this.state.friends);
     return (
       <div className="followers">
-        {this.state.friends.length > 0 &&
+        {this.state.apiDataLoaded ? (
           this.state.friends.map((element, index) => (
             <div style={element} key={index} className="followersProfile">
-              <h6>{element.username}</h6>
+              <div className="followerDetails">
+                <h6 className="otherUsername">{element.username}</h6>
+                <h6 className="otherUserTag">{element.usertag}</h6>
+              </div>
               <img src={element.image_url} alt="profilePic" />
             </div>
-          ))}
+          ))
+        ) : (
+          <div className="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        )}
       </div>
     );
   }

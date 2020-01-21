@@ -8,7 +8,7 @@ export default class UpdateProfile extends Component {
       usertag: "",
       username: "",
       image_url: "",
-      description: "",
+      description: ""
     };
   }
 
@@ -40,46 +40,46 @@ export default class UpdateProfile extends Component {
         <div className="posts">
           <img src={this.state.image_url} alt="post" id="postImage" />
           <form
-          onSubmit={e => {
-            e.preventDefault();
-            updateUser(this.props.match.params.id, this.state);
-          }}
+            onSubmit={e => {
+              e.preventDefault();
+              updateUser(this.props.match.params.id, this.state);
+            }}
           >
-          <label htmlFor="name">usertag</label>
-          <input
-            type="text"
-            name="usertag"
-            value={this.state.usertag}
-            onChange={this.handleChange}
-          />
-          <br />
-          
-          <label htmlFor="name">name</label>
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-          />
-          <br />
-          <label htmlFor="image_url">Image url</label>
-          <input
-            type="text"
-            name="image_url"
-            value={this.state.image_url}
-            onChange={this.handleChange}
-          />
-          <br />
-          <label htmlFor="description">description </label>
-          <input
-            type="text"
-            name="description"
-            value={this.state.description}
-            onChange={this.handleChange}
-          />
+            <label htmlFor="name">usertag</label>
+            <input
+              type="text"
+              name="usertag"
+              value={this.state.usertag}
+              onChange={this.handleChange}
+            />
+            <br />
 
-          <br />
-          <button type="submit">Update Post </button>
+            <label htmlFor="name">name</label>
+            <input
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+            />
+            <br />
+            <label htmlFor="image_url">Image url</label>
+            <input
+              type="text"
+              name="image_url"
+              value={this.state.image_url}
+              onChange={this.handleChange}
+            />
+            <br />
+            <label htmlFor="description">description </label>
+            <input
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleChange}
+            />
+
+            <br />
+            <button type="submit">Update Profile</button>
           </form>
         </div>
       </div>

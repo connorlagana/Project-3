@@ -78,7 +78,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {!this.state.currentUser ? (
+        {!this.state.currentUser.username ? (
           <>
             <Redirect to="/" />
             <Route
@@ -95,8 +95,11 @@ class App extends Component {
         ) : (
           <>
             <Redirect to="/home" />
-            <Header handleLogout={this.handleLogout} userName={this.state.currentUser.username} />
-              <FriendList currentUser={this.state.currentUser}/>
+            <Header
+              handleLogout={this.handleLogout}
+              userName={this.state.currentUser.username}
+            />
+            <FriendList currentUser={this.state.currentUser} />
             <Switch>
               <Route
                 exact
