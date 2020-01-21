@@ -90,26 +90,28 @@ userRouter
     }
   });
 
-userRouter.route("/followers/:id")
-.get(async (req, res) => {
-  try {
-    const user = await User.findByPk(req.params.id);
-    res.json(user.followers);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-})
+userRouter
+  .route("/followers/:id")
+  .get(async (req, res) => {
+    try {
+      const user = await User.findByPk(req.params.id);
+      res.json(user);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  })
   .put(async (req, res) => {
-  try {
-    const user = await User.findByPk(req.params.id);
-    let tempFollowers = [...user.followers, req.body.followers];
-    user.followers = tempFollowers;
-    await user.update(user);
-    res.json(user);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-});
+    try {
+      let user = await User.findByPk(req.params.id);
+      let newFollowers = user.followers;
+      newFollowers.push(req.body.followers);
+      let unique = [...new Set(newFollowers)];
+      await user.update({ followers: unique });
+      res.json(user);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  });
 
 userRouter.get("/verify", restrict, (req, res) => {
   const user = res.locals.user;

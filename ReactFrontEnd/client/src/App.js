@@ -96,7 +96,7 @@ class App extends Component {
           <>
             <Redirect to="/home" />
             <Header handleLogout={this.handleLogout} userName={this.state.currentUser.username} />
-            <FriendList />
+              <FriendList currentUser={this.state.currentUser}/>
             <Switch>
               <Route
                 exact
