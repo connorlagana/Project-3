@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import foodBackground from "../images/loginBackground.jpg";
+import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
+import fontLogo from "../images/fontLogo.png";
 
 class Login extends Component {
   constructor(props) {
@@ -25,9 +26,11 @@ class Login extends Component {
             <div id="leftLogin">
               <img
                 id="fruitPic"
-                src="https://images.unsplash.com/photo-1563298998-c743b38848b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"></img>
+                src="https://images.unsplash.com/photo-1563298998-c743b38848b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
+              ></img>
             </div>
             <div id="rightLogin">
+              <img src={fontLogo} id="fontLogoLogin"/>
               <h1>Member Login</h1>
               <form
                 onSubmit={e => {
@@ -54,8 +57,9 @@ class Login extends Component {
                   required
                 />
                 <button>Login</button>
-                <Link to="/register">
+                <Link to="/register" id="bottomLogin">
                   <p className="signup">Not a member? Click to sign up</p>
+                  <KeyboardArrowRight />
                 </Link>
               </form>
             </div>

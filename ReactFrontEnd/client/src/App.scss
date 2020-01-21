@@ -142,51 +142,64 @@ $gray-primary: rgb(71, 71, 71);
     }
   }
   #rightLogin {
-    background-color: #362ea1;
+    // background-color: #362ea1;
     height: 100%;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  & form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    & input {
-      border: none;
-      background-color: grey;
+    & #fontLogoLogin {
+      height: 10vh;
+      width: 20vw;
     }
-
-    & input:nth-child(1),
-    input:nth-child(2) {
+    & form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       position: relative;
-      width: 80%;
-      margin: 2vh 1vw;
-      height: 40px;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 1em;
-    }
-    & input:nth-child(3) {
-      width: 90%;
-      position: fixed;
-      bottom: 2vh;
-      height: 40px;
-      border-radius: 10px;
-    }
-    & .signup {
-      color: white;
-      font-weight: 700;
-      &:hover {
-        color: whitesmoke;
-        text-decoration: underline;
-        font-weight: 900;
-        transform: scale(1.05);
+
+      & input {
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        border-color: linear-gradient(
+          to bottom left,
+          #c6ffdd 0%,
+          #fbd786 50%,
+          #f7797d 100%
+        );
+      }
+
+      & input:nth-child(1),
+      input:nth-child(2) {
+        position: relative;
+        width: 80%;
+        margin: 2vh 1vw;
+        height: 40px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+      & input:nth-child(3) {
+        width: 90%;
+        position: fixed;
+        bottom: 2vh;
+        height: 40px;
+        border-radius: 10px;
+      }
+      #bottomLogin {
+        & .signup {
+          color: #f7797d;
+          font-weight: 700;
+          text-decoration: none;
+          transition: color 0.4s;
+          &:hover {
+            color: #c6ffdd;
+          }
+        }
       }
     }
   }
