@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { userDetails, getFollowers, addFollowers } from "../../services/api_helper";
+import { userDetails } from "../../services/api_helper";
 
 class Followers extends Component {
   constructor(props) {

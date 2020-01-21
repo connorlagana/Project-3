@@ -15,7 +15,7 @@ const api_helper = resp => {
 export const allUsers = async () => {
   const resp = await api.get("/users");
   return resp;
-}
+};
 
 export const loginUser = async loginData => {
   const resp = await api.post("/users/login", loginData);
@@ -37,10 +37,10 @@ export const verifyUser = async () => {
   return false;
 };
 
-export const userDetails = async (userId) => {
+export const userDetails = async userId => {
   const resp = await api.get(`/users/${userId}`);
   return resp;
-}
+};
 export const updateUser = async (id, updateData) => {
   const resp = await api.put(`/users/${id}`, updateData);
   return resp.data;
@@ -69,10 +69,10 @@ export const updatePost = async (id, updateData) => {
   return resp.data;
 };
 
-export const postDetails = async (id) => {
+export const postDetails = async id => {
   const resp = await api.get(`/posts/user/${id}`);
   return resp;
-}
+};
 
 // NEW COMMENT API_HELPER API CALLS
 
@@ -106,9 +106,9 @@ export const updateComment = async (id, updateData) => {
 export const getFollowers = async id => {
   const resp = await api.get(`/users/followers/${id}`);
   return resp.data;
-}
+};
 
-export const addFollowers = async id => {
-  const resp = await api.put(`/users/followers/${id}`);
+export const addFollowers = async (id, follId) => {
+  const resp = await api.put(`/users/followers/${id}`, follId);
   return resp.data;
-}
+};

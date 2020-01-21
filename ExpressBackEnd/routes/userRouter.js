@@ -90,26 +90,33 @@ userRouter
     }
   });
 
-userRouter.route("/followers/:id")
-.get(async (req, res) => {
-  try {
-    const user = await User.findByPk(req.params.id);
-    res.json(user.followers);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-})
+userRouter
+  .route("/followers/:id")
+  .get(async (req, res) => {
+    try {
+      const user = await User.findByPk(req.params.id);
+      res.json(user.followers);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  })
   .put(async (req, res) => {
-  try {
-    const user = await User.findByPk(req.params.id);
-    let tempFollowers = [...user.followers, req.body.followers];
-    user.followers = tempFollowers;
-    await user.update(user);
-    res.json(user);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-});
+    try {
+      let user = await User.findByPk(req.params.id);
+      let newUser = user;
+      let tempFollowers = user.followers;
+      tempFollowers.push(req.body.followers)
+      newUser.followers = tempFollowers;
+      // let tempFollowers = [...user.followers, req.body.followers];
+      // let unique = [...new Set(tempFollowers)];
+      // user.followers = [];
+      // console.log(user);
+      await user.update(newUser);
+      res.json(user);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  });
 
 userRouter.get("/verify", restrict, (req, res) => {
   const user = res.locals.user;
