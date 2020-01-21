@@ -1,3 +1,5 @@
+How to push to Heroku: git subtree push --prefix ExpressBackEnd heroku master                    
+
 # **Foodstagram 🐯**
 
 _Teamname_
