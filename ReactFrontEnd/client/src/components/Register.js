@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ArrowRightAlt from "@material-ui/icons/ArrowRightAlt";
 
 class Register extends Component {
   constructor(props) {
