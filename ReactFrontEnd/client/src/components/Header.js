@@ -8,16 +8,17 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      
     }
   }
 
   hamburger() {
     var ham = document.getElementById("myTopnav");
-    if (ham.style.display === "block") {
-      ham.style.display = "none";
-    } else {
-      ham.style.display = "block";
+    if (window.matchMedia("(max-width: 800px)").matches) {
+      if (ham.style.display === "block") {
+        ham.style.display = "none";
+      } else {
+        ham.style.display = "block";
+      }
     }
   }
 
@@ -34,22 +35,22 @@ class Header extends Component {
         <a href="#nowhere" className="icon" onClick={this.hamburger}>
           <i className="fa fa-bars"></i>
         </a>
-        <nav className="topnav" id= "myTopnav">
-          <Link to="/home" className="navItem">
+        <nav className="topnav hideOnMobile" id="myTopnav" onClick={this.hamburger}>
+          <Link to="/home" className="navItem hideOnMobile" >
             Home
           </Link>
-          <Link to="/createPost" className="navItem">
+          <Link to="/createPost" className="navItem hideOnMobile">
             Create Post
           </Link>
-          <Link to="/profile" className="navItem">
+          <Link to="/profile" className="navItem hideOnMobile">
             {this.props.userName}
           </Link>
-          <Link onClick={e => this.props.handleLogout(e)} className="navItem">
+          <Link onClick={e => this.props.handleLogout(e)} className="navItem hideOnMobile">
             Logout
           </Link>
-      </nav>
-    </div >
-  );
+        </nav>
+      </div >
+    );
   }
 };
 
