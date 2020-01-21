@@ -107,12 +107,12 @@ userRouter
       const found = newFollowers.find(
         element => element === req.body.followers
       );
-      if (found === ) {
+      console.log(found);
+      if (found === undefined) {
         newFollowers.push(req.body.followers);
       } else {
-        newFollowers = newFollowers.filter(
-          element => element === req.body.followers
-        );
+        newFollowers = newFollowers.filter(element => element !== found);
+        console.log(newFollowers);
       }
       const unique = [...new Set(newFollowers)];
       await user.update({ followers: unique });

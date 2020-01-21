@@ -10,7 +10,7 @@ if (process.env.DATABASE_URL) {
   });
 } else {
   sequelize = new Sequelize({
-    database: "characters_db",
+    database: "foodstagram_db",
     dialect: "postgres",
     define: {
       underscored: true
