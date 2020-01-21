@@ -284,8 +284,6 @@ $gray-primary: rgb(71, 71, 71);
     font-size: 20px;
     font-weight: 300;
   }
-  & p {
-  }
 }
 .commentSection {
   display: flex;
@@ -436,32 +434,24 @@ $gray-primary: rgb(71, 71, 71);
   align-items: center;
   box-shadow: 5px -5px 5px $gray-primary;
 }
-
-@media only screen and (max-width: 376px) {
+.icon{
+  display: none;
+}
+@media only screen and (max-width: 800px) {
   .friendList{
     display: none;
   }
   .allPosts{
     max-width: 95vw;
   }
-}
-@media screen and (max-width: 376px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .navItem.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  .headerRay{
+    display: flex;
+    flex-direction: column;
   }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-@media screen and (max-width: 376px) {
-  .topnav .navItem:not(:first-child) {display: none;}
-  .topnav .navItem.icon {
-    float: right;
+  .icon{
     display: block;
   }
 }
+
+
+

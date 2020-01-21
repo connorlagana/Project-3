@@ -12,14 +12,14 @@ class Header extends Component {
     }
   }
 
-myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
+  hamburger() {
+    var ham = document.getElementById("myTopnav");
+    if (ham.style.display === "block") {
+      ham.style.display = "none";
+    } else {
+      ham.style.display = "block";
+    }
   }
-}
 
 
   render() {
@@ -31,19 +31,22 @@ myFunction() {
           className="logoHeader"
         />
         <h1>FOODSTAGRAM</h1>
-        <nav className="topnav" id="myTopnav" onClick= {this.myFunction} >
-        <Link to="/home" className="navItem">
-          Home
-        </Link>
-        <Link to="/createPost" className="navItem">
-          Create Post
-        </Link>
-        <Link to="/profile" className="navItem">
-          {this.props.userName}
-        </Link>
-        <Link onClick={e => this.props.handleLogout(e)} className="navItem">
-          Logout
-        </Link>
+        <a href="#nowhere" className="icon" onClick={this.hamburger}>
+          <i className="fa fa-bars"></i>
+        </a>
+        <nav className="topnav" id= "myTopnav">
+          <Link to="/home" className="navItem">
+            Home
+          </Link>
+          <Link to="/createPost" className="navItem">
+            Create Post
+          </Link>
+          <Link to="/profile" className="navItem">
+            {this.props.userName}
+          </Link>
+          <Link onClick={e => this.props.handleLogout(e)} className="navItem">
+            Logout
+          </Link>
       </nav>
     </div >
   );
