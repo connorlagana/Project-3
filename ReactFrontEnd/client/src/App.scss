@@ -83,6 +83,11 @@ $gray-primary: rgb(71, 71, 71);
       font-size: 1.3em;
     }
   }
+  @media only screen and (max-width: 800px){
+    .posts {
+      margin:30px
+    }
+  }
   & #postImage {
     width: 100%;
     box-shadow: 5px 5px 5px $gray-primary;
@@ -161,7 +166,7 @@ $gray-primary: rgb(71, 71, 71);
 }
 #profile {
   background-color: rgb(151, 151, 151);
-  max-width: 50vw;
+  width: 50vw;
   padding-top: 12vh;
   padding-bottom: 5vh;
   overflow: hidden;
@@ -169,11 +174,19 @@ $gray-primary: rgb(71, 71, 71);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   & #profHeader {
     display: flex;
     justify-content: center;
     flex-direction: row;
     color: white;
+  }
+  @media only screen and (max-width: 800px){
+    #profHeader {
+    display:flex;
+    width: 300px;
+    flex-direction: column;
+    }
   }
   & #profPosts {
     display: flex;
@@ -208,7 +221,11 @@ $gray-primary: rgb(71, 71, 71);
     }
   }
 }
-
+@media only screen and (max-width: 800px){
+  #profile {
+  width: 300px;
+  }
+}
 .followers {
   position: fixed;
   right: 7vw;
@@ -294,6 +311,15 @@ $gray-primary: rgb(71, 71, 71);
     transition-timing-function: ease;
   }
 }
+@media only screen and (max-width: 800px){
+  #leftAbout {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: -100px 0 -100px 0;
+  }
+}
 #centerAbout {
   height: 300px;
   width: 300px;
@@ -316,6 +342,15 @@ $gray-primary: rgb(71, 71, 71);
   & h3 {
     font-size: 20px;
     font-weight: 300;
+  }
+}
+@media only screen and (max-width: 800px){
+  #rightAbout {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: -100px 0 -100px 0;
   }
 }
 .commentSection {
@@ -477,6 +512,9 @@ $gray-primary: rgb(71, 71, 71);
   .friendList{
     display: none;
   }
+  .followers{
+    display:none
+  }
   #backframeLogin{
     width:90vw
   }
@@ -491,10 +529,17 @@ $gray-primary: rgb(71, 71, 71);
     display: block;
     float: left;
   }
-  .allPosts{
-    margin-top:150px
+  .icon :active{
+    transition: all 1s ease-out;
+  }
+  .allPosts {
+    margin-top:80px
+  }
+  .createPost{
+    width: 80Vw
   }
   nav{
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -508,7 +553,7 @@ $gray-primary: rgb(71, 71, 71);
     }
     
     & .navItem{
-      background-color: grey;
+      background-color: orange;
       opacity: .8;
       display: flex;
       flex-direction: column;
