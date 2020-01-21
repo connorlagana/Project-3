@@ -11,11 +11,15 @@ class Followers extends Component {
   }
 
   componentDidMount = () => {
-    setTimeout(this.getFriends, 1000);
+    setTimeout(this.getFriends, 500);
+    // setInterval(this.getFriends, 500);
   };
 
   getFriends = async () => {
     try {
+      this.setState({
+        friends: []
+      });
       const followersId = this.props.followers;
       console.log(followersId);
       followersId.map(async followerId => {
@@ -40,7 +44,10 @@ class Followers extends Component {
         {this.state.friends.length > 0 &&
           this.state.friends.map((element, index) => (
             <div style={element} key={index} className="followersProfile">
-              <h6>{element.username}</h6>
+              <div className="followerDetails">
+                <h6 className="otherUsername">{element.username}</h6>
+                <h6 className="otherUserTag">{element.usertag}</h6>
+              </div>
               <img src={element.image_url} alt="profilePic" />
             </div>
           ))}
