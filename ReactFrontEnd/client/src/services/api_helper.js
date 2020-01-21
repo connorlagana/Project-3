@@ -52,6 +52,11 @@ export const updateUser = async (id, updateData) => {
 
 // NEW POST API_HELPER API CALLS
 
+export const allPosts = async () => {
+  const resp = await api.get("/posts");
+  return resp.data;
+}
+
 export const newPost = async newPost => {
   const resp = await api.post("/posts", newPost);
   return resp.data;

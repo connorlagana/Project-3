@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
+// import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import fontLogo from "../images/fontLogo.png";
 
 class Login extends Component {
@@ -59,7 +59,7 @@ class Login extends Component {
                 <button>Login</button>
                 <Link to="/register" id="bottomLogin">
                   <p className="signup">Not a member? Click to sign up</p>
-                  <KeyboardArrowRight />
+                  {/* <KeyboardArrowRight /> */}
                 </Link>
               </form>
             </div>
