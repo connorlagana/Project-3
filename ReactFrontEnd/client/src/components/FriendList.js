@@ -33,11 +33,9 @@ class FriendList extends Component {
                 <div className="imageContainer">
                   <img src={user.image_url} alt="userpic" />
                 </div>
-                <div className="endfix">
-                  <>
-                    <p>{user.usertag}</p>
-                    <p>{user.username}</p>
-                  </>
+                <div className="endFix">
+                  <p id="otherUserTag">{user.usertag}</p>
+                  <p id="otherUsername">{user.username}</p>
                   <button onClick={e => alert("Follow")}>Follow</button>
                 </div>
               </div>

@@ -363,6 +363,7 @@ $gray-primary: rgb(71, 71, 71);
     font-size: 1em;
   }
 }
+
 .friendList {
   position: fixed;
   left: 3vw;
@@ -382,40 +383,40 @@ $gray-primary: rgb(71, 71, 71);
     overflow-y: scroll;
     border: solid 1px $gray-primary;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  & .indUser {
-    margin: 0.5vh 0.5vw;
-    width: 100%;
-    border-bottom: 0.5px solid lightgray;
-    display: flex;
-    flex-direction: row;
-    & .imageContainer {
-      width: 80px;
-      height: 80px;
-      & img {
-        width: 95%;
-        height: 95%;
-        object-fit: cover;
-        margin: 0;
-        padding: 0;
-        border-radius: 15px;
-      }
-    }
-    & .endfix {
-      width: 200px;
+    width: 90%;
+    & .indUser {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      margin-left: 0.5vw;
-      margin-bottom: 0.5vh;
-      & p {
-        margin: 0;
-        padding: 0;
-        font-size: 1.3em;
+      flex-direction: row;
+      height: 100px;
+      margin: 3px;
+      & .imageContainer {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & img {
+          height: 100px;
+          width: 100px;
+          object-fit: cover;
+          border-radius: 1000px;
+        }
+      }
+
+      & .endFix {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 14px;
+        & #otherUserTag {
+          color: black;
+        }
+        & #otherUsername {
+          font-size: 10px;
+          color: gray;
+        }
       }
     }
   }
@@ -433,4 +434,3 @@ $gray-primary: rgb(71, 71, 71);
   align-items: center;
   box-shadow: 5px -5px 5px $gray-primary;
 }
-
