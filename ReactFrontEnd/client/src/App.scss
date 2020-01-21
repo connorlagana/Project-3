@@ -51,6 +51,7 @@ $gray-primary: rgb(71, 71, 71);
     border-bottom: 4px solid #222222;
     /* padding: 20px 0; */
     margin: 0 20px;
+    white-space: nowrap;
   }
   & .navItem:hover {
     border-top: 4px solid rgb(226, 99, 61);
@@ -450,6 +451,10 @@ $gray-primary: rgb(71, 71, 71);
   }
   .icon{
     display: block;
+    float: left
+  }
+  .allPosts{
+    margin-top:150px
   }
 }
 
