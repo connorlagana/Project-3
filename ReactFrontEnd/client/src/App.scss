@@ -122,8 +122,34 @@ $gray-primary: rgb(71, 71, 71);
   border-radius: 20px;
   z-index: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+
+  & #leftLogin {
+    width: 30vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    & #fruitPic {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+  }
+  #rightLogin {
+    background-color: #362ea1;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   & form {
     display: flex;
     flex-direction: column;
@@ -133,6 +159,7 @@ $gray-primary: rgb(71, 71, 71);
 
     & input {
       border: none;
+      background-color: grey;
     }
 
     & input:nth-child(1),

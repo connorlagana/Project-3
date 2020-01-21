@@ -23,7 +23,9 @@ class Login extends Component {
         <div id="gradientBG">
           <div id="backframeLogin">
             <div id="leftLogin">
-              <img src="https://img.freepik.com/free-vector/modern-flat-website-login-page-template_2095-181.jpg?size=626&ext=jpg"></img>
+              <img
+                id="fruitPic"
+                src="https://images.unsplash.com/photo-1563298998-c743b38848b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"></img>
             </div>
             <div id="rightLogin">
               <h1>Member Login</h1>
@@ -40,7 +42,7 @@ class Login extends Component {
                   name="username"
                   value={this.state.username}
                   onChange={this.onChange}
-                  placeholder="Username5"
+                  placeholder="Username"
                   required
                 />
                 <input
