@@ -80,18 +80,6 @@ userRouter
       res.json({ error: e.message });
     }
   })
-  // .put(async (req, res) => {
-  //   try {
-  //     const user = await User.findByPk(req.params.id);
-  //     let tempFollowers = [...user.followers, req.body.followers];
-  //     user.followers = tempFollowers;
-  //     await user.update(user);
-  //     res.json(user);
-  //   } catch (e) {
-  //     res.json({ error: e.message });
-  //   }
-  // })
-
   .put(restrict, async (req, res) => {
     try {
       const user = await User.findByPk(req.params.id);
@@ -102,11 +90,26 @@ userRouter
     }
   });
 
-
-
-
-
-  
+userRouter.route("/followers/:id")
+.get(async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.id);
+    res.json(user.followers);
+  } catch (e) {
+    res.json({ error: e.message });
+  }
+})
+  .put(async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.id);
+    let tempFollowers = [...user.followers, req.body.followers];
+    user.followers = tempFollowers;
+    await user.update(user);
+    res.json(user);
+  } catch (e) {
+    res.json({ error: e.message });
+  }
+});
 
 userRouter.get("/verify", restrict, (req, res) => {
   const user = res.locals.user;
