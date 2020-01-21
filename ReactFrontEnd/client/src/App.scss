@@ -2,6 +2,7 @@ $gray-primary: rgb(71, 71, 71);
 ::-webkit-scrollbar {
   width: 0px;
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -291,7 +292,7 @@ $gray-primary: rgb(71, 71, 71);
 .commentSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   min-height: 5vh;
   max-height: 20vh;
   overflow-x: hidden;

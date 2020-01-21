@@ -35,15 +35,11 @@ userRouter.get("/", async (req, res) => {
 userRouter.post("/register", async (req, res, next) => {
   try {
     const password_digest = await hashPassword(req.body.password);
-    const { username } = req.body;
-
     const user = await User.create({
-      username,
+      ...req.body,
       password_digest
     });
-
     const respData = buildAuthResponse(user);
-
     res.json(respData);
   } catch (e) {
     res.json({ error: e.message });
