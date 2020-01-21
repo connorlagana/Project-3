@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import fontLogo from "../images/fontLogo.png";
 
 class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      usertag: "",
       password: "",
       imageUrl: ""
     };
@@ -19,17 +19,19 @@ class Register extends Component {
   };
 
   registerUser = e => {
+    let usertag = this.state.username.split(" ").join("_");
     this.props.handleRegister(e, {
       username: this.state.username,
-      usertag: this.state.usertag,
+      usertag: usertag,
       password: this.state.password,
-      imageUrl: this.state.imageUrl
+      image_url: this.state.imageUrl
     });
   };
 
   render() {
     return (
       <div id="register">
+        <img id="fontLogo" src={fontLogo} />
         <div id="hello">Hello! Welcome to Foodstagram!</div>
         <img src={this.state.imageUrl} id="imageRegister" />
         <input
