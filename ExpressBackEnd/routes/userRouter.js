@@ -90,26 +90,37 @@ userRouter
     }
   });
 
-userRouter.route("/followers/:id")
-.get(async (req, res) => {
-  try {
-    const user = await User.findByPk(req.params.id);
-    res.json(user.followers);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-})
+userRouter
+  .route("/followers/:id")
+  .get(async (req, res) => {
+    try {
+      const user = await User.findByPk(req.params.id);
+      res.json(user);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  })
   .put(async (req, res) => {
-  try {
-    const user = await User.findByPk(req.params.id);
-    let tempFollowers = [...user.followers, req.body.followers];
-    user.followers = tempFollowers;
-    await user.update(user);
-    res.json(user);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-});
+    try {
+      const user = await User.findByPk(req.params.id);
+      let newFollowers = user.followers;
+      const found = newFollowers.find(
+        element => element === req.body.followers
+      );
+      console.log(found);
+      if (found === undefined) {
+        newFollowers.push(req.body.followers);
+      } else {
+        newFollowers = newFollowers.filter(element => element !== found);
+        console.log(newFollowers);
+      }
+      const unique = [...new Set(newFollowers)];
+      await user.update({ followers: unique });
+      res.json(user);
+    } catch (e) {
+      res.json({ error: e.message });
+    }
+  });
 
 userRouter.get("/verify", restrict, (req, res) => {
   const user = res.locals.user;
