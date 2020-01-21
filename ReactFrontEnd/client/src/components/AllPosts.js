@@ -10,6 +10,7 @@ class AllPosts extends Component {
     this.state = {
       posts: [],
       apiDataLoaded: false,
+      isPlaying: false,
       currentUser: null
     };
   }
@@ -48,6 +49,7 @@ class AllPosts extends Component {
           this.state.posts.map((post, key) => (
             <div className="posts" key={key}>
               <h3>{post.title}</h3>
+              <button id="threeCircles">•••</button>
               <img src={post.image_url} alt="post" id="postImage" />
               <p>{post.description}</p>
               <p>{post.fun_fact}</p>
@@ -61,7 +63,9 @@ class AllPosts extends Component {
                   Delete
                 </button>
               )}
-              <Link to={`/singlepost/${post.id}`}><button>Open Post</button></Link>
+              <Link to={`/singlepost/${post.id}`}>
+                <button>Open Post</button>
+              </Link>
               <Comments postId={post.id} />
             </div>
           ))}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { userDetails, getFollowers, addFollowers } from "../../services/api_helper";
+import { userDetails } from "../../services/api_helper";
 
 class Followers extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Followers extends Component {
           this.state.friends.map((element, index) => (
             <div style={element} key={index} className="followersProfile">
               <h6>{element.username}</h6>
-              <img src={element.image_url} alt="profilePic"/>
+              <img src={element.image_url} alt="profilePic" />
             </div>
           ))}
       </div>

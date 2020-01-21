@@ -49,7 +49,6 @@ $gray-primary: rgb(71, 71, 71);
     text-decoration: none;
     border-top: 4px solid #222222;
     border-bottom: 4px solid #222222;
-    /* padding: 20px 0; */
     margin: 0 20px;
     white-space: nowrap;
   }
@@ -65,10 +64,14 @@ $gray-primary: rgb(71, 71, 71);
   margin-top: 12vh;
   overflow: hidden;
   & .posts {
-    border: 0.5px solid $gray-primary;
-    padding: 1vh 1vw;
-    margin: 1vh 0;
-    border-radius: 5px;
+    
+    & #threeCircles {
+      border: none;
+      box-shadow: none;
+      background-color: white;
+      cursor: pointer;
+    }
+
     & h3 {
       text-align: center;
       font-size: 1.3em;
@@ -364,6 +367,7 @@ $gray-primary: rgb(71, 71, 71);
     font-size: 1em;
   }
 }
+
 .friendList {
   position: fixed;
   left: 3vw;
@@ -383,40 +387,41 @@ $gray-primary: rgb(71, 71, 71);
     overflow-y: scroll;
     border: solid 1px $gray-primary;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  & .indUser {
-    margin: 0.5vh 0.5vw;
-    width: 100%;
-    border-bottom: 0.5px solid lightgray;
-    display: flex;
-    flex-direction: row;
-    & .imageContainer {
-      width: 80px;
-      height: 80px;
-      & img {
-        width: 95%;
-        height: 95%;
-        object-fit: cover;
-        margin: 0;
-        padding: 0;
-        border-radius: 15px;
-      }
-    }
-    & .endfix {
-      width: 200px;
+    width: 90%;
+    & .indUser {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      margin-left: 0.5vw;
-      margin-bottom: 0.5vh;
-      & p {
-        margin: 0;
-        padding: 0;
-        font-size: 1.3em;
+      flex-direction: row;
+      height: 100px;
+      margin: 10px;
+      & .imageContainer {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & img {
+          height: 100px;
+          width: 100px;
+          object-fit: cover;
+          border-radius: 1000px;
+          background-color: rgb(99, 99, 99);
+        }
+      }
+
+      & .endFix {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 14px;
+        & #otherUserTag {
+          color: black;
+        }
+        & #otherUsername {
+          font-size: 10px;
+          color: gray;
+        }
       }
     }
   }
@@ -460,3 +465,103 @@ $gray-primary: rgb(71, 71, 71);
 
 
 
+#register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Karla", sans-serif;
+  & #hello {
+    font-size: 40px;
+    margin: 50px;
+  }
+
+  & #myName {
+    height: 80px;
+    color: #ce1e62;
+    font-size: 60px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    text-align: center;
+    font-family: "Karla", sans-serif;
+  }
+
+  & .curtainup {
+    color: black; /* button text color */
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 4px solid #eee;
+    letter-spacing: 0.0625em;
+    padding: 8px 10px;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 2;
+    font-family: "Karla", sans-serif;
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: none; /* remove underline if using A instead of BUTTON tag */
+    overflow: hidden;
+    transition: all 0.5s;
+    box-shadow: none;
+    border: none;
+    & #arrow {
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      height: 60px;
+      width: 80px;
+    }
+  }
+
+  .curtainup:before,
+  .curtainup:after {
+    transform-origin: center center;
+    transform: scale(1, 0);
+  }
+  .curtainup:hover:before,
+  .curtainup:hover:after {
+    transform: scale(1);
+    border-radius: 0;
+  }
+}
+
+.buttonfx:before,
+.buttonfx:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: #ce1e62; /* onhover background color */
+  z-index: -1;
+  transform: translate3D(
+    0,
+    -100%,
+    0
+  ); /* move elements above button so they don't appear initially */
+  transition: all 0.5s;
+}
+
+.buttonfx:before {
+  background: #fafcd6; /* button default background color */
+  z-index: -2;
+  transform: translate3D(0, 0, 0);
+}
+
+.buttonfx :hover {
+  color: white;
+  font-size: 50px;
+}
+
+.buttonfx:hover:after {
+  transform: translate3D(0, 0, 0);
+  transition: all 0.5s;
+}

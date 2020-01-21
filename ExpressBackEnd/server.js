@@ -1,5 +1,6 @@
 const express = require("express");
 const PORT = process.env.PORT || 3001;
+
 const postRouter = require("./routes/postRouter");
 const userRouter = require("./routes/userRouter.js");
 const commentRouter = require("./routes/commentRouter");

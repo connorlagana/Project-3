@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { allUsers } from "../services/api_helper";
+import { allUsers, addFollowers, updateUser } from "../services/api_helper";
 
 class FriendList extends Component {
   constructor(props) {
@@ -22,24 +22,35 @@ class FriendList extends Component {
     }
   };
 
+  handleAddFollower = async (e, follId) => {
+    e.preventDefault();
+    const userId = this.props.currentUser.id;
+    const resp = await addFollowers(userId, { followers: `${follId}` });
+    console.log(resp);
+  };
+
   render() {
+    console.log(this.props);
     return (
       <div className="friendList">
-        {this.state.apiDataLoaded &&
-          this.state.users.map((user, index) => (
-            <div className="indUser" key={index}>
-              <div className="imageContainer">
-                <img src={user.image_url} alt="userpic" />
+        <h1>Other Users:</h1>
+        <div id="belowOtherUsers">
+          {this.state.apiDataLoaded &&
+            this.state.users.map((user, index) => (
+              <div className="indUser" key={index}>
+                <div className="imageContainer">
+                  <img src={user.image_url} alt="userpic" />
+                </div>
+                <div className="endFix">
+                  <p id="otherUserTag">{user.usertag}</p>
+                  <p id="otherUsername">{user.username}</p>
+                  <button onClick={e => this.handleAddFollower(e, user.id)}>
+                    Follow
+                  </button>
+                </div>
               </div>
-              <div className="endfix">
-                <>
-                  <p>{user.usertag}</p>
-                  <p>{user.username}</p>
-                </>
-                <button onClick={e => alert("Follow")}>Follow</button>
-              </div>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
     );
   }
