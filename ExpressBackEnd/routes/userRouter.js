@@ -95,7 +95,7 @@ userRouter
   .get(async (req, res) => {
     try {
       const user = await User.findByPk(req.params.id);
-      res.json(user.followers);
+      res.json(user);
     } catch (e) {
       res.json({ error: e.message });
     }
@@ -103,15 +103,10 @@ userRouter
   .put(async (req, res) => {
     try {
       let user = await User.findByPk(req.params.id);
-      let newUser = user;
-      let tempFollowers = user.followers;
-      tempFollowers.push(req.body.followers)
-      newUser.followers = tempFollowers;
-      // let tempFollowers = [...user.followers, req.body.followers];
-      // let unique = [...new Set(tempFollowers)];
-      // user.followers = [];
-      // console.log(user);
-      await user.update(newUser);
+      let newFollowers = user.followers;
+      newFollowers.push(req.body.followers);
+      let unique = [...new Set(newFollowers)];
+      await user.update({ followers: unique });
       res.json(user);
     } catch (e) {
       res.json({ error: e.message });

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { allUsers, addFollowers } from "../services/api_helper";
+import { allUsers, addFollowers, updateUser } from "../services/api_helper";
 
 class FriendList extends Component {
   constructor(props) {
@@ -25,8 +25,6 @@ class FriendList extends Component {
   handleAddFollower = async (e, follId) => {
     e.preventDefault();
     const userId = this.props.currentUser.id;
-    console.log(userId);
-    console.log(follId);
     const resp = await addFollowers(userId, { followers: `${follId}` });
     console.log(resp);
   };
@@ -46,7 +44,9 @@ class FriendList extends Component {
                 <div className="endFix">
                   <p id="otherUserTag">{user.usertag}</p>
                   <p id="otherUsername">{user.username}</p>
-                  <button onClick={e => alert("Follow")}>Follow</button>
+                  <button onClick={e => this.handleAddFollower(e, user.id)}>
+                    Follow
+                  </button>
                 </div>
               </div>
             ))}
