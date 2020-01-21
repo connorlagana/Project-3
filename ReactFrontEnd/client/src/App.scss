@@ -108,6 +108,10 @@ $gray-primary: rgb(71, 71, 71);
     align-items: center;
     position: relative;
 
+    & input {
+      border: none;
+    }
+
     & input:nth-child(1),
     input:nth-child(2) {
       position: relative;
