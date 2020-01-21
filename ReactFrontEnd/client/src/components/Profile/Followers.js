@@ -36,7 +36,9 @@ class Followers extends Component {
     console.log(this.props.followers);
     console.log(this.state.friends);
     return (
-      <div className="followers">
+      <div className="friendList">
+        <h1>Other Users:</h1>
+        <div id="belowOtherUsers"></div>
         {this.state.friends.length > 0 &&
           this.state.friends.map((element, index) => (
             <div style={element} key={index} className="followersProfile">

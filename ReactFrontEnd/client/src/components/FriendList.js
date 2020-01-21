@@ -32,7 +32,7 @@ class FriendList extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className="friendList">
+      <div className="userList">
         <h1>Other Users:</h1>
         <div id="belowOtherUsers">
           {this.state.apiDataLoaded &&
@@ -42,7 +42,7 @@ class FriendList extends Component {
                   <img src={user.image_url} alt="userpic" />
                 </div>
                 <div className="endFix">
-                  <p id="otherUserTag">{user.usertag}</p>
+                  <p id="otherUserTag">@{user.usertag}</p>
                   <p id="otherUsername">{user.username}</p>
                   <button onClick={e => this.handleAddFollower(e, user.id)}>
                     Follow

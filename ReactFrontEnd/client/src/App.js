@@ -22,7 +22,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: false,
+      currentUser: true,
       errorText: ""
     };
   }
@@ -78,7 +78,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {!this.state.currentUser.username ? (
+        {!this.state.currentUser ? (
           <>
             <Redirect to="/" />
             <Route
