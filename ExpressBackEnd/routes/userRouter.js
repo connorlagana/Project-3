@@ -102,10 +102,19 @@ userRouter
   })
   .put(async (req, res) => {
     try {
-      let user = await User.findByPk(req.params.id);
+      const user = await User.findByPk(req.params.id);
       let newFollowers = user.followers;
-      newFollowers.push(req.body.followers);
-      let unique = [...new Set(newFollowers)];
+      const found = newFollowers.find(
+        element => element === req.body.followers
+      );
+      if (found === ) {
+        newFollowers.push(req.body.followers);
+      } else {
+        newFollowers = newFollowers.filter(
+          element => element === req.body.followers
+        );
+      }
+      const unique = [...new Set(newFollowers)];
       await user.update({ followers: unique });
       res.json(user);
     } catch (e) {
