@@ -33,6 +33,7 @@ $gray-primary: rgb(71, 71, 71);
     width: 20vw;
     height: 10vh;
   }
+
   & nav {
     display: flex;
     flex-direction: row;
@@ -396,7 +397,7 @@ $gray-primary: rgb(71, 71, 71);
   }
 }
 
-.friendList {
+.userList {
   position: fixed;
   left: 3vw;
   top: 50vh;
