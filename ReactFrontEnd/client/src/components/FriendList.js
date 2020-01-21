@@ -36,6 +36,7 @@ class FriendList extends Component {
       for (let j = 0; j < array2.length; j++) {
         if (array1[i].id === array2[j]) {
           array1[i].friend = "Unfollow";
+          break;
         } else {
           array1[i].friend = "Follow";
         }
