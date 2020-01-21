@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import fontLogo from "../images/fontLogo.png";
 
 class Register extends Component {
   constructor(props) {
