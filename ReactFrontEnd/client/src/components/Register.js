@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import fontLogo from "../images/fontLogo.png";
 
 class Register extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class Register extends Component {
   render() {
     return (
       <div id="register">
-        {/* <img id="fontLogo" src={fontLogo} /> */}
+        <img id="fontLogo" src={fontLogo} />
         <div id="hello">Hello! Welcome to Foodstagram!</div>
         <img src={this.state.imageUrl} id="imageRegister" />
         <input

@@ -91,7 +91,7 @@ userRouter
   .get(async (req, res) => {
     try {
       const user = await User.findByPk(req.params.id);
-      res.json(user);
+      res.json(user.followers);
     } catch (e) {
       res.json({ error: e.message });
     }
