@@ -61,7 +61,7 @@ class AllPosts extends Component {
                   Delete
                 </button>
               )}
-              <Link to={`/singlepost/${post.id}`}>Open Post</Link>
+              <Link to={`/singlepost/${post.id}`}><button>Open Post</button></Link>
               <Comments postId={post.id} />
             </div>
           ))}

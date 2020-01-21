@@ -100,3 +100,15 @@ export const updateComment = async (id, updateData) => {
   const resp = await api.put(`/comments/${id}`, updateData);
   return resp.data;
 };
+
+// CRUD FOLLOWERS API CALLS
+
+export const getFollowers = async id => {
+  const resp = await api.get(`/users/followers/${id}`);
+  return resp.data;
+}
+
+export const addFollowers = async id => {
+  const resp = await api.put(`/users/followers/${id}`);
+  return resp.data;
+}
