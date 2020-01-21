@@ -37,7 +37,7 @@ class Login extends Component {
               name="username"
               value={this.state.username}
               onChange={this.onChange}
-              placeholder="Username"
+              placeholder="Username5"
               required
             />
             <input
