@@ -35,23 +35,22 @@ class FriendList extends Component {
     console.log(this.props);
     return (
       <div className="friendList">
-        {this.state.apiDataLoaded &&
-          this.state.users.map((user, index) => (
-            <div className="indUser" key={index}>
-              <div className="imageContainer">
-                <img src={user.image_url} alt="userpic" />
+        <h1>Other Users:</h1>
+        <div id="belowOtherUsers">
+          {this.state.apiDataLoaded &&
+            this.state.users.map((user, index) => (
+              <div className="indUser" key={index}>
+                <div className="imageContainer">
+                  <img src={user.image_url} alt="userpic" />
+                </div>
+                <div className="endFix">
+                  <p id="otherUserTag">{user.usertag}</p>
+                  <p id="otherUsername">{user.username}</p>
+                  <button onClick={e => alert("Follow")}>Follow</button>
+                </div>
               </div>
-              <div className="endfix">
-                <>
-                  <p>{user.usertag}</p>
-                  <p>{user.username}</p>
-                </>
-                <button onClick={e => this.handleAddFollower(e, user.id)}>
-                  Follow
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
     );
   }
