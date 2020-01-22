@@ -24,14 +24,10 @@ $gray-primary: rgb(71, 71, 71);
   background-color: white;
   box-shadow: 1px 1px 1px $gray-primary;
 
-  & #fontLogo {
-    position: fixed;
-    display: inline-block;
-    top: 0;
-    left: 50vw;
-    transform: translate(-50%);
-    width: 20vw;
-    height: 10vh;
+  & #fontLogoHeader {
+    display: flex;
+    width: 100px;
+    height: 40px;
   }
 
   & nav {
@@ -187,6 +183,13 @@ $gray-primary: rgb(71, 71, 71);
         border-radius: 20px;
         margin: 5px;
         background-color: #c6ffdd;
+        color: rgb(83, 83, 83);
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        & #loginButton:hover {
+          background-color: f7797d;
+        }
       }
 
       & #bottomLogin {
@@ -603,8 +606,8 @@ $gray-primary: rgb(71, 71, 71);
   }
 
   & #fontLogo {
-    width: 300px;
-    height: 100px;
+    width: 200px;
+    height: 70px;
     margin: 0;
   }
 

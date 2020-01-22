@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-
-
+import fontLogo from "../images/fontLogo.png";
 
 class Header extends Component {
   constructor(props) {
-    super(props)
-    this.state = {
-    }
+    super(props);
+    this.state = {};
   }
 
   hamburger() {
@@ -22,7 +19,6 @@ class Header extends Component {
     }
   }
 
-
   render() {
     return (
       <div className="headerRay">
@@ -31,12 +27,16 @@ class Header extends Component {
           alt="Foodstagram"
           className="logoHeader"
         />
-        <h1>FOODSTAGRAM</h1>
+        <img src={fontLogo} id="#fontLogoHeader" />
         <a href="#nowhere" className="icon" onClick={this.hamburger}>
           <i className="fa fa-bars"></i>
         </a>
-        <nav className="topnav hideOnMobile" id="myTopnav" onClick={this.hamburger}>
-          <Link to="/home" className="navItem hideOnMobile" >
+        <nav
+          className="topnav hideOnMobile"
+          id="myTopnav"
+          onClick={this.hamburger}
+        >
+          <Link to="/home" className="navItem hideOnMobile">
             Home
           </Link>
           <Link to="/createPost" className="navItem hideOnMobile">
@@ -45,13 +45,16 @@ class Header extends Component {
           <Link to="/profile" className="navItem hideOnMobile">
             {this.props.userName}
           </Link>
-          <Link onClick={e => this.props.handleLogout(e)} className="navItem hideOnMobile">
+          <Link
+            onClick={e => this.props.handleLogout(e)}
+            className="navItem hideOnMobile"
+          >
             Logout
           </Link>
         </nav>
-      </div >
+      </div>
     );
   }
-};
+}
 
 export default Header;
