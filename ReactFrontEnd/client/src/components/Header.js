@@ -24,7 +24,7 @@ class Header extends Component {
     return (
       <div className="headerRay">
         <img src={logoCheetah} alt="Foodstagram" className="logoHeader" />
-        <img src={fontLogo} id="#fontLogoHeader" />
+        <img src={fontLogo} id="fontLogoHeader" />
         <a href="#nowhere" className="icon" onClick={this.hamburger}>
           <i className="fa fa-bars"></i>
         </a>
