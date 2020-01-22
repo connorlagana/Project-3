@@ -30,8 +30,6 @@ class FriendList extends Component {
     const array1 = this.state.users;
     let array2 = this.state.followers;
     array2 = array2.map(key => +key);
-    console.log(array1);
-    console.log(array2);
     for (let i = 0; i < array1.length; i++) {
       for (let j = 0; j < array2.length; j++) {
         if (array1[i].id === array2[j]) {
