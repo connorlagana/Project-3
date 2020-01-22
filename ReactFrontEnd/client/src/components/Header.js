@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import fontLogo from "../images/fontLogo.png";
 
 class Header extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Header extends Component {
           alt="Foodstagram"
           className="logoHeader"
         />
-        <h1>FOODSTAGRAM</h1>
+        <img src={fontLogo} id="fontLogoHeader" />
         <a href="#nowhere" className="icon" onClick={this.hamburger}>
           <i className="fa fa-bars"></i>
         </a>
