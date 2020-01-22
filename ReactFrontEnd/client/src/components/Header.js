@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import fontLogo from "../images/fontLogo.png";
+import logoCheetah from "../images/logoCheetah.png";
 
 class Header extends Component {
   constructor(props) {
@@ -22,11 +23,7 @@ class Header extends Component {
   render() {
     return (
       <div className="headerRay">
-        <img
-          src="https://www.freeiconspng.com/uploads/instagram-photo-camera-logo-outline-icons--free-download-14.jpg"
-          alt="Foodstagram"
-          className="logoHeader"
-        />
+        <img src={logoCheetah} alt="Foodstagram" className="logoHeader" />
         <img src={fontLogo} id="#fontLogoHeader" />
         <a href="#nowhere" className="icon" onClick={this.hamburger}>
           <i className="fa fa-bars"></i>
