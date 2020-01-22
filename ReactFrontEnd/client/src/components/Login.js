@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
+// import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import fontLogo from "../images/fontLogo.png";
 
 class Login extends Component {
