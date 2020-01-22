@@ -31,7 +31,7 @@ class Register extends Component {
   render() {
     return (
       <div id="register">
-        {/* <img id="fontLogo" src={fontLogo} /> */}
+        <img id="fontLogo" src={fontLogo} />
         <div id="hello">Hello! Welcome to Foodstagram!</div>
         <img src={this.state.imageUrl} id="imageRegister" />
         <input

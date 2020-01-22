@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 import { newPost } from "../services/api_helper";
 
@@ -29,10 +30,10 @@ class CreatePost extends Component {
     e.preventDefault();
     try {
       const resp = newPost(this.state.posts);
-      console.log(resp);
     } catch (e) {
       console.log(e);
     }
+    // this.props.history.push("/home");
   };
 
   render() {
