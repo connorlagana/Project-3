@@ -25,9 +25,11 @@ $gray-primary: rgb(71, 71, 71);
   box-shadow: 1px 1px 1px $gray-primary;
 
   & #fontLogoHeader {
+    position: fixed;
+    left: 50vw;
+    transform: translateX(-50%);
     display: flex;
-    width: 100px;
-    height: 40px;
+    height: 10vh;
   }
 
   & nav {
