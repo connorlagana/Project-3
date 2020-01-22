@@ -37,7 +37,7 @@ userRouter.post("/register", async (req, res, next) => {
     const password_digest = await hashPassword(req.body.password);
     const user = await User.create({
       ...req.body,
-      followers: [],
+      followers: [1],
       password_digest
     });
     const respData = buildAuthResponse(user);
