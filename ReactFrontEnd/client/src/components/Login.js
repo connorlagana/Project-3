@@ -30,7 +30,7 @@ class Login extends Component {
               ></img>
             </div>
             <div id="rightLogin">
-              <img src={fontLogo} id="fontLogoLogin"/>
+              <img src={fontLogo} id="fontLogoLogin" />
               <h1>Member Login</h1>
               <form
                 onSubmit={e => {
@@ -40,27 +40,36 @@ class Login extends Component {
                   });
                 }}
               >
-                <input
-                  type="text"
-                  name="username"
-                  value={this.state.username}
-                  onChange={this.onChange}
-                  placeholder="Username"
-                  required
-                />
-                <input
-                  type="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  placeholder="Password"
-                  required
-                />
-                <button>Login</button>
-                <Link to="/register" id="bottomLogin">
-                  <p className="signup">Not a member? Click to sign up</p>
-                  {/* <KeyboardArrowRight /> */}
-                </Link>
+                <div className="borderInputLogin">
+                  <input
+                    className="inputLogin"
+                    type="text"
+                    name="username"
+                    value={this.state.username}
+                    onChange={this.onChange}
+                    placeholder="Username"
+                    required
+                  />
+                </div>
+                <div className="borderInputLogin">
+                  <input
+                    className="inputLogin"
+                    type="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.onChange}
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+
+                <button id="loginButton">Login</button>
+                <div id="newHoverDiv">
+                  <Link to="/register" id="bottomLogin">
+                    <p className="signup">Not a member? Click to sign up</p>
+                    <KeyboardArrowRight color="secondary" id="arrowRight" />
+                  </Link>
+                </div>
               </form>
             </div>
           </div>
