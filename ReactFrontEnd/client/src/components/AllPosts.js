@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { deletePost } from "../services/api_helper";
+import { deletePost, allPosts } from "../services/api_helper";
 import { Link } from "react-router-dom";
 import Comments from "./Comments";
 
@@ -17,9 +17,10 @@ class AllPosts extends Component {
 
   componentDidMount = async () => {
     try {
-      const results = await axios.get("http://localhost:3001/posts");
+      const results = await allPosts();
+      console.log(results);
       this.setState({
-        posts: results.data,
+        posts: results,
         apiDataLoaded: true,
         currentUser: this.props.currentUser
       });
