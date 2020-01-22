@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { newPost } from "../services/api_helper";
 
 class CreatePost extends Component {
@@ -29,7 +28,6 @@ class CreatePost extends Component {
     e.preventDefault();
     try {
       const resp = newPost(this.state.posts);
-      console.log(resp);
     } catch (e) {
       console.log(e);
     }
