@@ -17,7 +17,7 @@ function Profile(props) {
           <img src={props.image_url} alt="profilepic" />
         </div>
         <div id="rightAbout">
-          <h3>Posts: 69</h3>
+          <h3>Posts: {props.posts.length}</h3>
           <p>{props.description}</p>
         </div>
       </div>

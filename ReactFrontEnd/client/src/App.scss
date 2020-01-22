@@ -228,8 +228,10 @@ $gray-primary: rgb(71, 71, 71);
   & #profHeader {
     display: flex;
     justify-content: center;
+    align-items: space-around;
     flex-direction: row;
     color: white;
+    width: 50vw;
   }
   @media only screen and (max-width: 800px){
     #profHeader {
@@ -333,7 +335,8 @@ $gray-primary: rgb(71, 71, 71);
 
 #leftAbout {
   height: 300px;
-  width: 300px;
+  width: 33%;
+  padding-right: 2vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -371,7 +374,7 @@ $gray-primary: rgb(71, 71, 71);
 }
 #centerAbout {
   height: 300px;
-  width: 300px;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -383,7 +386,8 @@ $gray-primary: rgb(71, 71, 71);
 }
 #rightAbout {
   height: 300px;
-  width: 300px;
+  width: 30%;
+  padding-left: 2vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
