@@ -1,37 +1,18 @@
-How to push to Heroku: git subtree push --prefix ExpressBackEnd heroku master                    
+How to push to Heroku: git subtree push --prefix ExpressBackEnd heroku master
 
 # **Foodstagram 🐯**
 
-_Teamname_
-
-![Logo](./srcreadme/cheetahsarse.png)
-
-# **ᄃΉΣΣƬΉΛ'Ƨ ΛЯƧΣ**
-
-## Project Planning
-
-> The Project Planning section should be completed for your project pitch with instructors.
-
-
+# **ᄃΉΣΣƬΉΛ'Ƨ**
 
 ### Overview
 
-_**Project Title**_  Foodstagram
-
+_**Project Title**_ Foodstagram
 
 <br>
 
 ### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views.
-
-![Desktop Landing](https://i.imgur.com/ZfpzJFw.jpg)
-
-- Desktop Landing
-
-<br>
-
-![Desktop Hero](https://imgur.com/b0qfhe3.jpg)
+![Desktop Landing](https://imgur.com/c8Pwk1U.jpg)
 
 - Desktop Hero
 
@@ -40,12 +21,6 @@ _**Project Title**_  Foodstagram
 ![Desktop Data Index](https://imgur.com/NLbRbFi.jpg)
 
 - Desktop Data Index
-
-<br>
-
-![Tablet Data Index](https://imgur.com/0Jfho3P.jpg)
-
-- Tablet Data Index
 
 <br>
 
@@ -63,7 +38,7 @@ _**Project Title**_  Foodstagram
 
 > The Minimum Viable Product should be a well-planned and easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-_The Food Instagram
+\_The Food Instagram
 be able to sign in/ sign out
 create user
 see all post
@@ -71,13 +46,11 @@ see all post 1 user
 change post
 delete post
 
-
 #### Goals
 
-make a simple rendition of instagram 
+make a simple rendition of instagram
 
 #### Libraries
-
 
 #### React Components
 
@@ -94,34 +67,33 @@ src
       |__ Footer.jsx
       |__ register user
       |__ create form for post
-      |__ 
-      |__ 
+      |__
+      |__
 ```
 
 _Component Breakdown_
 
-
-|  Component   |    Type    | state | props | Description                                                      |
-| :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | class      |   y   |   y   | _The header will contain the navigation login/ logout functions._               |
-|  login/logout| class      |   y   |   y   | _be able to login and out_       |
-|  Create Posts|   class    |   y   |   y   | _create a post._      |
-| create user  |   class    |   y   |   y   | _create a user._          |
-|   Update post|   class    |   y   |   y   | _update the post_ |
-|   Update User|   class    |   y   |   y   | _update the user info |
+|  Component   | Type  | state | props | Description                                                       |
+| :----------: | :---: | :---: | :---: | :---------------------------------------------------------------- |
+|    Header    | class |   y   |   y   | _The header will contain the navigation login/ logout functions._ |
+| login/logout | class |   y   |   y   | _be able to login and out_                                        |
+| Create Posts | class |   y   |   y   | _create a post._                                                  |
+| create user  | class |   y   |   y   | _create a user._                                                  |
+| Update post  | class |   y   |   y   | _update the post_                                                 |
+| Update User  | class |   y   |   y   | \_update the user info                                            |
 
 _Component Estimates_
 
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Header              |    h     |     3 hrs      |     0     |    tbd    |
-| Create post and user|    H     |     3 hrs      |     0     |     TBD    
-| Update post and user|    H     |     3 hrs      |     0     |     TBD     
-| login/logout        |    H     |     3 hrs      |     0     |     TBD    |
-| css/design          |    H     |     10 hrs     |     0     |     TBD    |
-| TOTAL               |          |     22 hrs     |     0     |     TBD   
+| Task                 | Priority | Estimated Time | Time Invested | Actual Time |
+| -------------------- | :------: | :------------: | :-----------: | :---------: |
+| Header               |    h     |     3 hrs      |       0       |     tbd     |
+| Create post and user |    H     |     3 hrs      |       0       |     TBD     |
+| Update post and user |    H     |     3 hrs      |       0       |     TBD     |
+| login/logout         |    H     |     3 hrs      |       0       |     TBD     |
+| css/design           |    H     |     10 hrs     |       0       |     TBD     |
+| TOTAL                |          |     22 hrs     |       0       |     TBD     |
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evalute possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
@@ -163,9 +135,9 @@ _ERD Overview_
 
 > Use this section to document all helper functions– generic functions that can be reused in other applications.
 
-|  Function  | Description                                |
-| :--------: | :----------------------------------------- |
-| delete     | _be able to delete if u are user_ |
+| Function | Description                       |
+| :------: | :-------------------------------- |
+|  delete  | _be able to delete if u are user_ |
 
 ### Code Showcase
 
@@ -180,4 +152,3 @@ function reverse(string) {
 ### Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
-
